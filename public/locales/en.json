@@ -1,0 +1,49 @@
+{
+  "name": "YourDigitalWeb",
+  "page": {
+    "home": {
+      "title": "Home",
+      "name": "Hello! I'm Priscila",
+      "desing": "UX/UI Designer",
+      "msg": "With more than 5 years of experience in UI/UX, my career includes challenging projects that have enriched my skills in creative and functional design."
+    },
+    "services": {
+      "title": "My Skills",
+      "text": "Boost your image, build your success: a good page speaks excellence about your company.",
+      "cards": {
+        "design": {
+          "title": "User Interface",
+          "text": "Every detail of my interface is carefully designed to ensure a smooth and effective experience. I not only care about aesthetics, but also about driving your business goals and improving user retention. Whether for mobile applications, sites website or other digital products."
+        },
+        "seo": {
+          "title": "User Experience",
+          "text": "I specialize in creating memorable and efficient digital experiences that captivate from the first click. I immerse myself in the psychology of your potential customers, creating intuitive, attractive and functional interfaces that convert visitors into loyal customers."
+        },
+        "redesign": {
+          "title": "UX Design",
+          "text": "My approach focuses on understanding the needs and wants of your users to design interfaces that are easy to use, attractive and effective. My goal is to ensure a smooth and satisfying digital experience for your customers, which contributes to achieving of your business objectives."
+        }
+      }
+    },
+    "prices": {
+      "title": "Projects"
+    },
+    "us": {
+      "title": "About Me",
+      "name": "My name is Priscila, with more than 5 years of design experience I specialize in UI/UX.",
+      "text": "My background has provided me with a solid foundation in various aspects of design, from conceptualization to the implementation of creative and functional solutions, working on challenging projects that have continually broadened my perspective and enriched my skills."
+    },
+    "portfolio": {
+      "title": "Portfolio"
+    },
+    "contact": {
+      "title": "Contact",
+      "text": "Here you won't find those tedious forms that consume your valuable time. Just click the button and let your ideas come to life with us."
+    }
+  },
+  "buttons": {
+    "contact": "Contact me",
+
+    "more": "See more"
+  }
+}

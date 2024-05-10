@@ -1,0 +1,49 @@
+{
+  "name": "TuDigitalWeb",
+  "page": {
+    "home": {
+      "title": "Inicio",
+      "name": "Hola! soy Priscila",
+      "desing": "Diseñadora UX/Ui",
+      "msg": "Con más de 5 años de experiencia en UI/UX, mi trayectoria incluye proyectos desafiantes que han enriquecido mis habilidades en diseño creativo y funcional."
+    },
+    "services": {
+      "title": "My Skills",
+      "text": "Potencia tu imagen, construye tu éxito: una buena página habla excelencias de tu empresa.",
+      "cards": {
+        "design": {
+          "title": "User Interfaz",
+          "text": "Cada detalle de mi interfaz está cuidadosamente diseñado para garantizar una experiencia fluida y efectiva. No solo me preocupo por la estética, sino también por impulsar tus objetivos comerciales y mejorar la retención de usuarios. Ya sea para aplicaciones móviles, sitios web u otros productos digitales."
+        },
+        "seo": {
+          "title": "User Experiencie",
+          "text": "Me especializo en crear experiencias digitales memorables y eficientes que cautivan desde el primer clic. Me sumerjo en la psicología de tus clientes potenciales, creando interfaces intuitivas, atractivas y funcionales que convierten visitantes en clientes leales."
+        },
+        "redesign": {
+          "title": "UX Desing",
+          "text": "Mi enfoque se centra en comprender las necesidades y deseos de tus usuarios para diseñar interfaces que sean fáciles de usar, atractivas y efectivas. Mi objetivo es garantizar una experiencia digital fluida y satisfactoria para tus clientes, lo que contribuye al logro de tus objetivos comerciales."
+        }
+      }
+    },
+    "prices": {
+      "title": "Proyectos"
+    },
+    "us": {
+      "title": "Sobre Mi",
+      "name": "Mi nombre es Priscila, con más de 5 años de experiencia en diseño me especialice en UI/UX.",
+      "text": "Mi trayectoria me ha proporcionado una sólida base en diversos aspectos del diseño, desde la conceptualización hasta la implementación de soluciones creativas y funcionales, trabajando en proyectos desafiantes que han ampliado mi perspectiva y enriquecido mis habilidades continuamente."
+    },
+    "portfolio": {
+      "title": "Portafolio"
+    },
+    "contact": {
+      "title": "Contacto",
+      "text": "Aquí no encontrarás esos tediosos formularios que consumen tu valioso tiempo. Simplemente haz clic en el botón y deja que tus ideas cobren vida con nosotros."
+    }
+  },
+  "buttons": {
+    "contact": "Contactame",
+
+    "more": "Ver más"
+  }
+}
