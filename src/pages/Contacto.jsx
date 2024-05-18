@@ -48,7 +48,7 @@ export default function Contacto() {
         align="center"
         gap="2rem"
       >
-        <Vector />
+        <Vector width="200" />
         <Container
           flex="column"
           justify="center"

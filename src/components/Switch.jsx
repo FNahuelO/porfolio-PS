@@ -28,7 +28,7 @@ const Slider = styled.span`
     width: 15px;
     left: 0;
     bottom: -6px;
-    background-color: white;
+    background-color: ${({ color }) => color || 'white'};
     transition: 0.4s;
     border-radius: 50%;
   }
@@ -47,7 +47,7 @@ const SwitchInput = styled.input`
 `
 
 // Componente Switch
-const Switch = ({ onChange, checked }) => {
+const Switch = ({ onChange, checked, color }) => {
   const { i18n } = useTranslation()
   const [isChecked, setIsChecked] = useState(checked || false)
 
@@ -63,7 +63,7 @@ const Switch = ({ onChange, checked }) => {
         checked={isChecked}
         onChange={handleChange}
       />
-      <Slider />
+      <Slider color={color} />
     </SwitchWrapper>
   )
 }

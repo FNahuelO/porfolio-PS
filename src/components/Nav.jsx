@@ -5,9 +5,28 @@ import { useTranslation } from 'react-i18next'
 import es from '../assets/spain.svg'
 import en from '../assets/gb.svg'
 import Switch from './Switch'
+import { useEffect, useState } from 'react'
 
 export default function Nav() {
   const { t, i18n } = useTranslation()
+
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 800) {
+        setScrolled(true)
+      } else {
+        setScrolled(false)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   const labels = [
     t('page.home.title'),
@@ -22,9 +41,9 @@ export default function Nav() {
 
   return (
     <Container
-      bg="transparent"
+      bg={scrolled ? '#ffffffb8' : 'none'}
       height="5vh"
-      padding="3rem 0"
+      padding="1.5rem 0"
       justify="center"
       align="center"
       position="fixed"
@@ -46,7 +65,7 @@ export default function Nav() {
           <a href={`#${item}`} key={idx} style={{ textDecoration: 'none' }}>
             <Text
               key={idx}
-              color="white"
+              color={scrolled ? '#4A4A4A' : 'white'}
               weight="500"
               textShadow="0px 4px 4px #00000040"
             >
@@ -57,9 +76,19 @@ export default function Nav() {
       </Container>
 
       <Container gap="1.5rem" align="center">
-        <Text onClick={() => cambiarIdioma('es')}>ES</Text>
-        <Switch />
-        <Text onClick={() => cambiarIdioma('en')}>EN</Text>
+        <Text
+          color={scrolled ? '#4A4A4A' : 'white'}
+          onClick={() => cambiarIdioma('es')}
+        >
+          ES
+        </Text>
+        <Switch color={scrolled ? '#4A4A4A' : 'white'} />
+        <Text
+          color={scrolled ? '#4A4A4A' : 'white'}
+          onClick={() => cambiarIdioma('en')}
+        >
+          EN
+        </Text>
       </Container>
     </Container>
   )
