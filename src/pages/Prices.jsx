@@ -4,43 +4,44 @@ import { Text } from '../../style/Text'
 import Card from '../components/cards/Price'
 import Modal from '../components/modal/Modal'
 import Slider from '../components/Slider'
-import Vector from '../assets/ProyectVector'
+import Vector from '../assets/VectorP'
 import { useTranslation } from 'react-i18next'
+import { Button } from '../../style/Buttons'
+import styled from 'styled-components'
+
+const SpeechBubble = styled.div`
+  position: absolute;
+  bottom: 7rem;
+  left: 0;
+  background: #f9b233;
+  border-radius: 2rem;
+  padding: 3rem 2rem;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  text-align: start;
+  line-height: 1.4;
+  width: 20rem;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    left: 35px; /* Ajusta la posición horizontal del triángulo aquí */
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 30px solid #f9b233;
+  }
+`
 
 export default function Prices() {
   const { t } = useTranslation()
-  const [modal, setModal] = useState({ view: false, payload: null })
-  const textList = [
-    t('page.prices.services.hosting'),
-    t('page.prices.services.domain'),
-    t('page.prices.services.design'),
-  ]
-  const cardTexts = [
-    {
-      title: t('page.prices.cards.basic.title'),
-      text: t('page.prices.cards.basic.text'),
-      amount: '450000',
-      list: [
-        ...textList,
-        t('page.prices.services.tabThree'),
-        t('page.prices.services.portfolio'),
-      ],
-    },
+  const [view, setView] = useState(true)
 
-    {
-      title: t('page.prices.cards.intermediate.title'),
-      text: t('page.prices.cards.intermediate.text'),
-      amount: '750000',
-      list: [...textList, t('page.prices.services.tab'), t('buttons.more')],
-    },
-    {
-      title: t('page.prices.cards.pro.title'),
-      text: t('page.prices.cards.pro.text'),
-      amount: '1300000',
-      list: [...textList, t('page.prices.services.tab'), t('buttons.more')],
-    },
-  ]
-  useEffect(() => {
+  /* useEffect(() => {
     // Habilitar o deshabilitar el scroll del cuerpo cuando se muestra o se cierra el modal
     const html = document.documentElement
     const body = document.body
@@ -57,7 +58,7 @@ export default function Prices() {
       html.style.overflow = 'auto'
       body.style.overflow = 'auto'
     }
-  }, [modal])
+  }, [modal]) */
   const handleClick = (data) => {
     setModal({ view: true, payload: data })
   }
@@ -75,12 +76,12 @@ export default function Prices() {
       flex="column"
       id="Proyectos"
       position="relative"
-      gap="5rem"
     >
-      <Container flex="column" gap="1rem" align="center" margin="4rem 0 0 0">
+      <Container flex="column" gap="1rem" align="center" margin="2rem 0">
         <Text
           size="2rem"
           weight="800"
+          color="#43ADB9"
           style={{
             background:
               'linear-gradient(0deg, rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.01)), linear-gradient(180deg, #76B1E1 -7%, #FFFFFF -6.99%, #D5D5D5 31.95%, #F2F5F7 56.55%, #F7F7F7 75%)',
@@ -96,8 +97,26 @@ export default function Prices() {
       <Container width="80vw" justify="center">
         <Slider />
       </Container>
-      <Container position="absolute" bottom="0" left="5%">
-        <Vector />
+      <Container position="absolute" bottom="2%" left="5%">
+        <Container position="relative">
+          <Button
+            width="5rem"
+            height="5rem"
+            bg="white"
+            radius="50%"
+            shadow="0px 4px 4px 0px #C7DAF278 inset,0px 4px 4px 0px #00000026"
+            padding=".5rem 0 0 0"
+            onClick={() => setView(!view)}
+          >
+            <Vector width="2rem" height="2rem" />
+          </Button>
+          {view && (
+            <SpeechBubble>
+              Utilizo metodologías de investigación y análisis para informar
+              cada paso del proceso de diseño
+            </SpeechBubble>
+          )}
+        </Container>
       </Container>
     </Container>
   )

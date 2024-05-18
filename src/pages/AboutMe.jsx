@@ -10,13 +10,13 @@ export default function Nosotros() {
     <Container
       bg="transparent"
       flex="column"
-      height="95vh"
+      height="100vh"
       align="center"
       justify="center"
       radius="0 0 15% 15%"
       id="Sobre Mi"
     >
-      <Container position="absolute" width="80%" height="94%">
+      <Container position="absolute" width="80%">
         <Vector />
       </Container>
       <Container
@@ -27,6 +27,7 @@ export default function Nosotros() {
         bg="#FFFFFF7A"
         padding="4rem"
         radius="1rem"
+        transform="translate(0,5%)"
         style={{
           backdropFilter: 'blur(39.75px)',
         }}

@@ -6,6 +6,7 @@ const SVGComponent = (props) => (
     viewBox="0 0 248 256"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    style={{ zIndex: '1' }}
     {...props}
   >
     <path

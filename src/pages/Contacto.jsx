@@ -1,8 +1,6 @@
 import { Container } from '../../style/Container'
 import { Text } from '../../style/Text'
-import { Button } from '../../style/Buttons'
 import Vector from '../assets/VectorP'
-import vector from '../assets/about-svg.svg'
 import Instagram from '../assets/Instagram'
 import Facebook from '../assets/Facebook'
 import Twitter from '../assets/Twitter'
@@ -20,10 +18,10 @@ export default function Contacto() {
   ]
 
   const vectores = [
-    <Facebook width="30%" height="30%" />,
-    <Instagram width="30%" height="30%" />,
-    <Whatsapp width="30%" height="30%" />,
-    <Twitter width="30%" height="30%" />,
+    <Facebook width="40%" height="40%" />,
+    <Instagram width="40%" height="40%" />,
+    <Whatsapp width="40%" height="40%" />,
+    <Twitter width="40%" height="40%" />,
   ]
 
   return (
@@ -33,20 +31,31 @@ export default function Contacto() {
       justify="center"
       flex="column"
       id="Contacto"
-      bgImg={vector}
-      bgRepeat="no-repeat"
-      bgPosition="right -20%"
+      position="relative"
+      overflow="hidden"
+      style={{
+        backgroundImage: `url(/images/bg.svg)`,
+        backgroundSize: 'cover',
+        backgroundPositionY: '-40%',
+        backgroundRepeat: 'no-repeat',
+      }}
     >
       <Container
         flex="column"
-        justify="flex-end"
+        justify="center"
         height="75%"
         width="50%"
         align="center"
-        gap="5rem"
+        gap="2rem"
       >
         <Vector />
-        <Container flex="column" justify="center" align="center" gap="2rem">
+        <Container
+          flex="column"
+          justify="center"
+          align="center"
+          gap="2rem"
+          index="2"
+        >
           <Text
             weight="700"
             size="2rem"
@@ -58,21 +67,22 @@ export default function Contacto() {
           <Container align="center" gap="4rem">
             {labels.map((item, idx) => (
               <a href={`#${item}`} key={idx} style={{ textDecoration: 'none' }}>
-                <Text key={idx} color="#FFFFFF" weight="500">
+                <Text key={idx} color="#FFFFFF" weight="500" size=".75rem">
                   {item}
                 </Text>
               </a>
             ))}
           </Container>
-          <Container align="center" gap="4rem">
+          <Container align="center" gap="2rem">
             {vectores.map((item, idx) => (
               <Container
-                width="3.5rem"
-                height="3.5rem"
+                width="2.5rem"
+                height="2.5rem"
                 radius="50%"
                 bg="white"
                 align="center"
                 justify="center"
+                key={idx}
               >
                 {item}
               </Container>

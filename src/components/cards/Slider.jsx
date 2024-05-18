@@ -23,7 +23,7 @@ function Card({ imagen, title, text }) {
       <Text color="#78778A" size="1.25rem" align="start">
         {title}
       </Text>
-      <Text color="#78778A" width="80%" align="start">
+      <Text color="#78778A" size=".7rem" align="start">
         {text}
       </Text>
     </animated.div>

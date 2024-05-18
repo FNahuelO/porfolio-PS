@@ -1,9 +1,9 @@
 import * as React from 'react'
 const SVGComponent = (props) => (
   <svg
-    width={769}
-    height={874}
-    viewBox="0 0 769 874"
+    width={400}
+    height={500}
+    viewBox="0 0 914 1116"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
@@ -11,7 +11,7 @@ const SVGComponent = (props) => (
     <rect
       width={1116}
       height={914}
-      transform="matrix(0 -1 -1 0 769 874)"
+      transform="matrix(0 -1 -1 0 914 1116)"
       fill="url(#paint0_linear_11_9425)"
       fillOpacity={0.6}
     />

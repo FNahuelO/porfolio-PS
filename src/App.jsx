@@ -3,9 +3,9 @@ import Contacto from './pages/Contacto'
 import Home from './pages/Home'
 //import './App.css'
 import Nav from './components/Nav'
-import Nosotros from './pages/Nosotros'
+import AboutMe from './pages/AboutMe'
 import Prices from './pages/Prices'
-import Services from './pages/Services'
+import Skills from './pages/Skills'
 import Portfolio from './pages/Portfolio'
 
 function App() {
@@ -20,8 +20,8 @@ function App() {
       <Container flex="column" bg="white">
         <Nav />
         <Home />
-        <Nosotros />
-        <Services />
+        <AboutMe />
+        <Skills />
         <Prices />
         <Contacto />
         {/* <Portfolio /> */}

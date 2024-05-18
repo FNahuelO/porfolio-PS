@@ -12,25 +12,26 @@ export default function Services({ title, text, color }) {
   }
   return (
     <Container
-      width="20rem"
-      height="35rem"
-      bg="transaparent"
+      width="15rem"
+      height="30rem"
+      bg="none"
       flex="column"
       align="center"
       justify="center"
       position="relative"
-      radius="1rem"
+      radius="2rem"
       gap="1rem"
+      border="1px solid"
       hover={{
         boxShadow: '0px 7px 79.3px -23px' + color,
       }}
     >
       <img
         src={vectores[color.substring(1)]}
-        style={{ width: 200, height: 200 }}
+        style={{ width: 150, height: 150 }}
       />
 
-      <Text weight="800" size="1.5rem" color="#4A4A4A">
+      <Text weight="800" size="1rem" color="#4A4A4A">
         {title}
       </Text>
       <Text
@@ -38,7 +39,7 @@ export default function Services({ title, text, color }) {
         weight="600"
         align="center"
         width="70%"
-        size=".9rem"
+        size=".7rem"
       >
         {text}
       </Text>

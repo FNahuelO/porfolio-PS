@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 
 // Estilos para el interruptor
@@ -47,13 +48,12 @@ const SwitchInput = styled.input`
 
 // Componente Switch
 const Switch = ({ onChange, checked }) => {
+  const { i18n } = useTranslation()
   const [isChecked, setIsChecked] = useState(checked || false)
 
   const handleChange = () => {
     setIsChecked(!isChecked)
-    if (onChange) {
-      onChange(!isChecked)
-    }
+    i18n.changeLanguage(isChecked ? 'es' : 'en')
   }
 
   return (
