@@ -8,7 +8,7 @@ import { Text } from '../../../style/Text'
 import { Button } from '../../../style/Buttons'
 import { useTranslation } from 'react-i18next'
 
-export default function Price({ data, index, onClick }) {
+export default function Proyectos({ data, index, onClick }) {
   const { t } = useTranslation()
   const formatted = new Intl.NumberFormat('es-CO', {
     style: 'currency',

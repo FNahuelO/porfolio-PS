@@ -1,7 +1,6 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const Button = styled.button`
-  font-family: 'Syne', sans-serif;
   font-weight: ${({ weight }) => weight || null};
   position: ${({ position }) => position || null};
   top: ${({ top }) => top || null};
@@ -39,4 +38,20 @@ export const Button = styled.button`
   &:focus {
     outline: none;
   }
+
+  &:hover {
+    ${({ hover }) =>
+      hover &&
+      css`
+        ${hover}
+      `};
+  }
+
+  ${({ responsive }) =>
+    responsive &&
+    css`
+      @media screen and (max-width: 1400px) {
+        ${responsive}
+      }
+    `}
 `

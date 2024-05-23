@@ -31,7 +31,7 @@ export default function Services({ title, text, color }) {
         style={{ width: 150, height: 150 }}
       />
 
-      <Text weight="800" size="1rem" color="#4A4A4A">
+      <Text weight="800" size="1.25rem" color="#4A4A4A">
         {title}
       </Text>
       <Text
@@ -39,7 +39,7 @@ export default function Services({ title, text, color }) {
         weight="600"
         align="center"
         width="70%"
-        size=".7rem"
+        size=".75rem"
       >
         {text}
       </Text>

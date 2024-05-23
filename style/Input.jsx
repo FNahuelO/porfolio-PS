@@ -1,9 +1,8 @@
-import styled from 'styled-components';
-import vector from '../Style/assets/ChevronDrown.svg';
-import desplegar from '../Style/assets/Desplegar.svg';
-import { Field as FieldFormik } from 'formik';
+import styled from 'styled-components'
+import { Field as FieldFormik } from 'formik'
 
 export const Field = styled(FieldFormik)`
+  font-family: 'Josefin Sans', sans-serif;
   width: ${({ width }) => width || null};
   min-width: ${({ minWidth }) => minWidth || null};
   max-width: ${({ maxWidth }) => maxWidth || null};
@@ -26,14 +25,14 @@ export const Field = styled(FieldFormik)`
   background-position-x: ${({ bgPositionX }) => bgPositionX || null};
   background-position-y: ${({ bgPositionY }) => bgPositionY || null};
   background-repeat: ${({ bgRepeat }) => bgRepeat || null};
-  background-image: ${({ bgImage }) => bgImage && `url('${vector?.src}')`};
   > option {
     background: ${({ bgOption }) => bgOption || null};
     color: ${({ colorOption }) => colorOption || null};
   }
-`;
+`
 
 export const Input = styled.input`
+  font-family: 'Josefin Sans';
   width: ${({ width }) => width || null};
   min-width: ${({ minWidth }) => minWidth || null};
   max-width: ${({ maxWidth }) => maxWidth || null};
@@ -57,7 +56,7 @@ export const Input = styled.input`
     background: ${({ bgOption }) => bgOption || null};
     color: ${({ colorOption }) => colorOption || null};
   }
-`;
+`
 
 export const InputFile = styled.div`
   position: relative;
@@ -86,7 +85,7 @@ export const InputFile = styled.div`
   > input[type='file'] {
     opacity: 0;
   }
-`;
+`
 
 export const InputSearch = styled.input`
   width: ${({ width }) => width || null};
@@ -96,45 +95,7 @@ export const InputSearch = styled.input`
   padding-right: ${({ paddingRight }) => paddingRight || null};
   border-radius: ${({ radius }) => radius || null};
   outline: none;
-`;
-
-export const Select = styled.select`
-  appearance: none;
-  width: ${({ width }) => width || null};
-  height: ${({ height }) => height || null};
-  text-align: ${({ textAlign }) => textAlign || null};
-  font-weight: ${({ weight }) => weight || null};
-  font-size: ${({ size }) => size || null};
-  border: ${({ border }) => border || null};
-  border-radius: ${({ radius }) => radius || null};
-  box-shadow: ${({ shadow }) => shadow || null};
-  color: ${({ color }) => color || null};
-  background: ${({ bg }) => bg || null};
-  padding: ${({ padding }) => padding || null};
-  border-top-left-radius: ${({ topLeft }) => topLeft || null};
-  border-bottom-left-radius: ${({ bottomLeft }) => bottomLeft || null};
-  border-top-right-radius: ${({ topRight }) => topRight || null};
-  border-bottom-right-radius: ${({ bottomRight }) => bottomRight || null};
-  outline: ${({ outline }) => outline || null};
-  overflow: ${({ overflow }) => overflow || null};
-  background-image: ${({ vectorColor }) =>
-    vectorColor === 'black'
-      ? `url('${vector.src}')`
-      : `url('${desplegar.src}')`};
-  background-position-y: center;
-  background-position-x: ${({ vectorWidth }) => vectorWidth || '95%'};
-  background-size: ${({ bgSize }) => bgSize || '1.5rem'};
-  cursor: ${({ cursor }) => cursor || null};
-  background-repeat: no-repeat;
-
-  &::placeholder {
-    color: #4c4f4d;
-  }
-  > option {
-    background: ${({ bgOption }) => bgOption || null};
-    color: ${({ colorOption }) => colorOption || null};
-  }
-`;
+`
 
 export const InputIcon = styled.div`
   display: flex;
@@ -188,4 +149,4 @@ export const InputIcon = styled.div`
       }
     }
   }
-`;
+`

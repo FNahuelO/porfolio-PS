@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react'
 import { config } from 'react-spring'
 
 export default function Carroussel(props) {
-  const table = props.cards.map((element, index) => {
+  const table = props.cards?.map((element, index) => {
     return { ...element, onClick: () => setGoToSlide(index) }
   })
 
@@ -36,11 +36,11 @@ export default function Carroussel(props) {
   const handleTouchEnd = () => {
     if (touchStartX && touchEndX) {
       if (touchEndX < touchStartX) {
-        setGoToSlide((activeCardRef.current + 1) % cards.length)
+        setGoToSlide((activeCardRef.current + 1) % cards?.length)
       } else if (touchEndX > touchStartX) {
         setGoToSlide(
           activeCardRef.current === 0
-            ? cards.length - 1
+            ? cards?.length - 1
             : activeCardRef.current - 1,
         )
       }

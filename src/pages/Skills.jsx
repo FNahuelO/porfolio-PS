@@ -34,7 +34,7 @@ export default function Skills() {
     >
       <Container width="70%" gap="2rem" flex="column">
         <Text
-          size="1.5rem"
+          size="2rem"
           weight="800"
           align="start"
           color="#43ADB9"

@@ -6,6 +6,7 @@ import es from '../assets/spain.svg'
 import en from '../assets/gb.svg'
 import Switch from './Switch'
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Nav() {
   const { t, i18n } = useTranslation()
@@ -14,7 +15,7 @@ export default function Nav() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 800) {
+      if (window.scrollY > 500) {
         setScrolled(true)
       } else {
         setScrolled(false)
@@ -61,18 +62,24 @@ export default function Nav() {
         ))}
       </Container>
       <Container width="15%" align="center" justify="space-evenly">
-        {labels2.map((item, idx) => (
-          <a href={`#${item}`} key={idx} style={{ textDecoration: 'none' }}>
-            <Text
-              key={idx}
-              color={scrolled ? '#4A4A4A' : 'white'}
-              weight="500"
-              textShadow="0px 4px 4px #00000040"
-            >
-              {item}
-            </Text>
-          </a>
-        ))}
+        <a href={`#${labels2[0]}`} style={{ textDecoration: 'none' }}>
+          <Text
+            color={scrolled ? '#4A4A4A' : 'white'}
+            weight="500"
+            textShadow="0px 4px 4px #00000040"
+          >
+            {labels2[0]}
+          </Text>
+        </a>
+        <Link to={`${labels2[1]}`}>
+          <Text
+            color={scrolled ? '#4A4A4A' : 'white'}
+            weight="500"
+            textShadow="0px 4px 4px #00000040"
+          >
+            {labels2[1]}
+          </Text>
+        </Link>
       </Container>
 
       <Container gap="1.5rem" align="center">

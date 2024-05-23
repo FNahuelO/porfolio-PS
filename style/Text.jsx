@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 export const Text = styled.span`
-  font-family: 'Syne', sans-serif;
   position: ${({ position }) => position || null};
   top: ${({ top }) => top || null};
   bottom: ${({ bottom }) => bottom || null};

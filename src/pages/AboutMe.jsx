@@ -41,11 +41,19 @@ export default function Nosotros() {
         >
           {t('page.us.title')}
         </Text>
-        <Container flex="column" gap="1rem" align="start">
-          <Text size="1rem" color="#7F7676" textShadow="0px 4px 4px  #00000040">
+        <Container flex="column" gap=".5rem" align="start">
+          <Text
+            size="1.25rem"
+            color="#7F7676"
+            textShadow="0px 4px 4px  #00000040"
+          >
             {t('page.us.name')}
           </Text>
-          <Text size="1rem" color="#7F7676" textShadow="0px 4px 4px  #00000040">
+          <Text
+            size="1.25rem"
+            color="#7F7676"
+            textShadow="0px 4px 4px  #00000040"
+          >
             {t('page.us.text')}
           </Text>
         </Container>
