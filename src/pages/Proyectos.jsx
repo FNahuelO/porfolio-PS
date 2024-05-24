@@ -33,8 +33,8 @@ const SpeechBubble = styled.div`
   &:after {
     content: '';
     position: absolute;
-    bottom: -30px;
-    left: 35px; /* Ajusta la posición horizontal del triángulo aquí */
+    bottom: -20px;
+    left: 20px; /* Ajusta la posición horizontal del triángulo aquí */
     width: 0;
     height: 0;
     border-left: 15px solid transparent;
@@ -107,13 +107,12 @@ export default function Proyectos() {
       height="105vh"
       align="center"
       justify="center"
-      gap="1rem"
       radius="0 0 15% 15%"
       flex="column"
       id="Proyectos"
       position="relative"
     >
-      <Container flex="column" align="center" transform="translate(0,-50%)">
+      <Container flex="column" align="center">
         <Text
           size="2rem"
           weight="800"
@@ -133,7 +132,7 @@ export default function Proyectos() {
       <Container width="80vw" justify="center" height="75vh">
         <Slider cards={cards} />
       </Container>
-      <Container position="absolute" bottom="7.5%" left="2.5%">
+      <Container position="absolute" bottom="7.5%" left="4%">
         <Container position="relative">
           <Button
             width="5rem"

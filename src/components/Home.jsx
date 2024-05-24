@@ -32,12 +32,12 @@ export default function Home() {
       >
         <LuzIzq />
       </Container>
-      <Container flex="column" width="40%" gap=".5rem" align="start">
-        <Text size="2.5rem" weight="800" color="#0B0A0F">
+      <Container flex="column" width="40%" align="start">
+        <Text size="3.5rem" weight="800" color="#0B0A0F">
           {t('page.home.name')}
         </Text>
         <Text
-          size="1.5rem"
+          size="2rem"
           style={{
             backgroundImage:
               'linear-gradient(91.01deg, #FB980F 2.15%, #FAC02C 30.61%, #F9F352 79.93%, #F9EC5C 105.1%, #F9EB68 140.34%)',
@@ -47,7 +47,7 @@ export default function Home() {
         >
           {t('page.home.desing')}
         </Text>
-        <Text size="1rem" color="#666768">
+        <Text size="1.25rem" color="#666768">
           {t('page.home.msg')}
         </Text>
 

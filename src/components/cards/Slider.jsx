@@ -41,7 +41,13 @@ function Card({ imagen, title, text, design, link }) {
           {text}
         </Text>
       </Container>
-      <Container justify="center" gap="1rem" margin=".5rem 0 0 0">
+      <Container
+        justify="center"
+        gap="1rem"
+        position="absolute"
+        bottom="1rem"
+        width="100%"
+      >
         {design && (
           <Button
             padding="1rem 1.5rem .5rem 1.5rem"
