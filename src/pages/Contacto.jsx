@@ -129,15 +129,15 @@ export default function Contacto() {
         <LuzIzq />
       </Container>
       <Container position="absolute" right="0" top="0">
-        <Circle />
+        <Circle width="40rem" height="40rem" />
       </Container>
       <Container
         position="absolute"
         left="0"
-        bottom="-5%"
+        bottom="-20%"
         transform="rotate(180deg)"
       >
-        <Circle color="#FB980F54" />
+        <Circle color="#FB980F54" width="40rem" height="40rem" />
       </Container>
 
       <Container
