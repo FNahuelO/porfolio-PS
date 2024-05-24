@@ -38,13 +38,14 @@ function Card({ imagen, title, text, design, link }) {
       <Container justify="center" gap="1rem" margin=".5rem 0 0 0">
         {design && (
           <Button
-            padding=".5rem 1.5rem"
+            padding="1rem 1.5rem .5rem 1.5rem"
             bg="#FFFFFF"
             color="#5EA3C0"
             radius="1rem"
             display="flex"
             align="center"
             justify="center"
+            border="none"
             shadow="0px 4px 0px 0px #CDCDCD40, 0px 4px 0px 0px #ACACAC40 inset, 0px 4px 4px 0px #00000040"
             onClick={() => window.open(design, '_blank')}
           >
@@ -53,12 +54,13 @@ function Card({ imagen, title, text, design, link }) {
         )}
         {link && (
           <Button
-            padding=".5rem 1.5rem"
+            padding="1rem 1.5rem .5rem 1.5rem"
             bg="#FFFFFF"
             color="#5EA3C0"
             radius="1rem"
             display="flex"
             align="center"
+            border="none"
             justify="center"
             shadow="0px 4px 0px 0px #CDCDCD40, 0px 4px 0px 0px #ACACAC40 inset, 0px 4px 4px 0px #00000040"
             onClick={() => window.open(link, '_blank')}

@@ -9,7 +9,6 @@ function App({ cards }) {
     <Carousel
       cards={cards}
       activeCard={activeCard}
-      height="500px"
       width="55%"
       margin="0 auto"
       offset={1}

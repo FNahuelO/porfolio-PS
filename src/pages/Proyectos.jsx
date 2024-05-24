@@ -130,7 +130,7 @@ export default function Proyectos() {
           {t('page.prices.title')}
         </Text>
       </Container>
-      <Container width="80vw" justify="center">
+      <Container width="80vw" justify="center" height="75vh">
         <Slider cards={cards} />
       </Container>
       <Container position="absolute" bottom="5.5%" left="2.5%">
