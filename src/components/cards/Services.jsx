@@ -21,7 +21,6 @@ export default function Services({ title, text, color }) {
       position="relative"
       radius="2rem"
       gap="1rem"
-      border="1px solid"
       hover={{
         boxShadow: '0px 7px 79.3px -23px' + color,
       }}
