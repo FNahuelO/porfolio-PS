@@ -9,6 +9,7 @@ import { Container } from '../../style/Container'
 import { useFormik } from 'formik'
 import { Text } from '../../style/Text'
 import styled from 'styled-components'
+import Nav from '../components/Nav'
 
 const fields = [
   { name: 'nombre', label: 'Nombre', type: 'text' },
@@ -103,6 +104,7 @@ export default function Contacto() {
       position="relative"
       overflow="hidden"
     >
+      <Nav />
       <Container position="absolute" top="-1rem" left="-3rem">
         <LuzIzq />
       </Container>

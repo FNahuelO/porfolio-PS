@@ -6,9 +6,14 @@ import Facebook from '../assets/Facebook'
 import Twitter from '../assets/Twitter'
 import Whatsapp from '../assets/Whatsapp'
 import { useTranslation } from 'react-i18next'
+import { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 
 export default function Contacto() {
   const { t } = useTranslation()
+  const location = useLocation()
+  const [isContactPage, setIsContactPage] = useState(false)
+
   const labels = [
     t('page.home.title'),
     t('page.us.title'),
@@ -23,6 +28,14 @@ export default function Contacto() {
     <Whatsapp width="40%" height="40%" />,
     <Twitter width="40%" height="40%" />,
   ]
+
+  useEffect(() => {
+    if (location.pathname === '/contacto') {
+      setIsContactPage(true)
+    } else {
+      setIsContactPage(false)
+    }
+  }, [location.pathname])
 
   return (
     <Container
@@ -66,13 +79,25 @@ export default function Contacto() {
             Priscila Sarmiento
           </Text>
           <Container align="center" gap="4rem">
-            {labels.map((item, idx) => (
-              <a href={`#${item}`} key={idx} style={{ textDecoration: 'none' }}>
-                <Text key={idx} color="#FFFFFF" weight="500">
-                  {item}
-                </Text>
-              </a>
-            ))}
+            {labels.map((item, idx) => {
+              if (!(isContactPage && item === t('page.contact.title'))) {
+                let link
+                if (location.pathname === '/') {
+                  link =
+                    item === t('page.contact.title') ? '/contacto' : `#${item}`
+                } else {
+                  link = `/#${item}`
+                }
+                return (
+                  <a href={link} key={idx} style={{ textDecoration: 'none' }}>
+                    <Text key={idx} color="#FFFFFF" weight="500">
+                      {item}
+                    </Text>
+                  </a>
+                )
+              }
+              return null
+            })}
           </Container>
           <Container align="center" gap="2rem">
             {vectores.map((item, idx) => (

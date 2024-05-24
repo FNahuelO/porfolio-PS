@@ -1,16 +1,15 @@
 import { Container } from '../../style/Container'
-import { Button } from '../../style/Buttons'
 import { Text } from '../../style/Text'
 import { useTranslation } from 'react-i18next'
-import es from '../assets/spain.svg'
-import en from '../assets/gb.svg'
+
 import Switch from './Switch'
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 export default function Nav() {
   const { t, i18n } = useTranslation()
-
+  const location = useLocation()
+  const [isContactPage, setIsContactPage] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
@@ -28,6 +27,14 @@ export default function Nav() {
       window.removeEventListener('scroll', handleScroll)
     }
   }, [])
+
+  useEffect(() => {
+    if (location.pathname === '/contacto') {
+      setIsContactPage(true)
+    } else {
+      setIsContactPage(false)
+    }
+  }, [location.pathname])
 
   const labels = [
     t('page.home.title'),
@@ -51,10 +58,21 @@ export default function Nav() {
       index="999"
       width="100%"
       gap="2rem"
+      top="0"
     >
-      <Container width="55%" align="center" gap="4rem">
+      <Container
+        width={isContactPage ? '60%' : '55%'}
+        align="center"
+        justify={isContactPage ? 'center' : 'flex-start'}
+        transform={isContactPage ? 'translateX(15%)' : null}
+        gap="4rem"
+      >
         {labels.map((item, idx) => (
-          <a href={`#${item}`} key={idx} style={{ textDecoration: 'none' }}>
+          <a
+            href={isContactPage ? `/#${item}` : `#${item}`}
+            key={idx}
+            style={{ textDecoration: 'none' }}
+          >
             <Text key={idx} color="#4A4A4A" weight="500" size="1.25rem">
               {item}
             </Text>
@@ -62,7 +80,10 @@ export default function Nav() {
         ))}
       </Container>
       <Container width="15%" align="center" justify="space-evenly">
-        <a href={`#${labels2[0]}`} style={{ textDecoration: 'none' }}>
+        <a
+          href={isContactPage ? `/#${labels2[0]}` : `#${labels2[0]}`}
+          style={{ textDecoration: 'none' }}
+        >
           <Text
             color={scrolled ? '#4A4A4A' : 'white'}
             weight="500"
@@ -72,16 +93,18 @@ export default function Nav() {
             {labels2[0]}
           </Text>
         </a>
-        <Link to={`${labels2[1]}`}>
-          <Text
-            color={scrolled ? '#4A4A4A' : 'white'}
-            weight="500"
-            size="1.25rem"
-            textShadow="0px 4px 4px #00000040"
-          >
-            {labels2[1]}
-          </Text>
-        </Link>
+        {!isContactPage && (
+          <Link to={`${labels2[1].toLowerCase()}`}>
+            <Text
+              color={scrolled ? '#4A4A4A' : 'white'}
+              weight="500"
+              size="1.25rem"
+              textShadow="0px 4px 4px #00000040"
+            >
+              {labels2[1]}
+            </Text>
+          </Link>
+        )}
       </Container>
 
       <Container gap="1.5rem" align="center">

@@ -12,8 +12,8 @@ export default function Services({ title, text, color }) {
   }
   return (
     <Container
-      width="18%"
-      height="80%"
+      width="20%"
+      height="90%"
       bg="none"
       flex="column"
       align="center"

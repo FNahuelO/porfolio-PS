@@ -6,10 +6,11 @@ import Vector from '../assets/VectorHome'
 import LuzIzq from '../assets/Luz'
 import Mail from '../assets/VectorMail'
 import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router-dom'
 
 export default function Home() {
   const { t } = useTranslation()
-  const text = t('page.home.msg')
+
   return (
     <Container
       align="center"
@@ -32,7 +33,7 @@ export default function Home() {
       >
         <LuzIzq />
       </Container>
-      <Container flex="column" width="40%" align="start">
+      <Container flex="column" width="40%" align="start" index="5">
         <Text size="3.5rem" weight="800" color="#0B0A0F">
           {t('page.home.name')}
         </Text>
@@ -50,22 +51,24 @@ export default function Home() {
         <Text size="1.25rem" color="#666768">
           {t('page.home.msg')}
         </Text>
-
-        <Button
-          bg="#FE7234"
-          color="white"
-          padding=".75rem 2rem"
-          weight="700"
-          radius="3rem"
-          borderBottom="5px solid #BF4109FC"
-          shadow="5px 6px 3.9px 0px #00000040"
-          margin=".5rem 0"
-          display="flex"
-          align="center"
-          gap="1rem"
-        >
-          {t('buttons.contact') + '!'} <Mail />
-        </Button>
+        <Link to="/contacto">
+          <Button
+            color="white"
+            bg="#FE7234"
+            padding=".75rem 2rem"
+            weight="700"
+            radius="3rem"
+            borderBottom="5px solid #BF4109FC"
+            shadow="5px 6px 3.9px 0px #00000040"
+            margin=".5rem 0"
+            display="flex"
+            align="center"
+            gap="1rem"
+            cursor="pointer"
+          >
+            {t('buttons.contact') + '!'} <Mail />
+          </Button>
+        </Link>
       </Container>
       <Container index="10" transform="translate(0,3rem)">
         <Vector width="50rem" height="45rem" />
