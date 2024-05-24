@@ -68,10 +68,10 @@ export default function Home() {
         </Button>
       </Container>
       <Container index="10" transform="translate(0,3rem)">
-        <Vector width="60rem" height="50rem" />
+        <Vector width="50rem" height="45rem" />
       </Container>
       <Container position="absolute" right="0" top="0">
-        <Circle width="60rem" height="60rem" />
+        <Circle width="50rem" height="50rem" />
       </Container>
     </Container>
   )

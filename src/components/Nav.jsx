@@ -55,7 +55,7 @@ export default function Nav() {
       <Container width="55%" align="center" gap="4rem">
         {labels.map((item, idx) => (
           <a href={`#${item}`} key={idx} style={{ textDecoration: 'none' }}>
-            <Text key={idx} color="#4A4A4A" weight="500">
+            <Text key={idx} color="#4A4A4A" weight="500" size="1.25rem">
               {item}
             </Text>
           </a>
@@ -66,6 +66,7 @@ export default function Nav() {
           <Text
             color={scrolled ? '#4A4A4A' : 'white'}
             weight="500"
+            size="1.25rem"
             textShadow="0px 4px 4px #00000040"
           >
             {labels2[0]}
@@ -75,6 +76,7 @@ export default function Nav() {
           <Text
             color={scrolled ? '#4A4A4A' : 'white'}
             weight="500"
+            size="1.25rem"
             textShadow="0px 4px 4px #00000040"
           >
             {labels2[1]}
@@ -85,6 +87,7 @@ export default function Nav() {
       <Container gap="1.5rem" align="center">
         <Text
           color={scrolled ? '#4A4A4A' : 'white'}
+          size="1.25rem"
           onClick={() => cambiarIdioma('es')}
         >
           ES
@@ -92,6 +95,7 @@ export default function Nav() {
         <Switch color={scrolled ? '#4A4A4A' : 'white'} />
         <Text
           color={scrolled ? '#4A4A4A' : 'white'}
+          size="1.25rem"
           onClick={() => cambiarIdioma('en')}
         >
           EN

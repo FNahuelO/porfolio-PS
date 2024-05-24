@@ -12,8 +12,8 @@ export default function Services({ title, text, color }) {
   }
   return (
     <Container
-      width="15rem"
-      height="30rem"
+      width="18%"
+      height="80%"
       bg="none"
       flex="column"
       align="center"
@@ -27,19 +27,13 @@ export default function Services({ title, text, color }) {
     >
       <img
         src={vectores[color.substring(1)]}
-        style={{ width: '10rem', height: '10rem' }}
+        style={{ width: '15rem', height: '15rem' }}
       />
 
-      <Text weight="800" size="1.25rem" color="#4A4A4A">
+      <Text weight="800" size="1.5rem" color="#4A4A4A">
         {title}
       </Text>
-      <Text
-        color="#8D8D8D"
-        weight="600"
-        align="center"
-        width="70%"
-        size=".75rem"
-      >
+      <Text color="#8D8D8D" weight="600" align="center" width="70%" size="1rem">
         {text}
       </Text>
     </Container>

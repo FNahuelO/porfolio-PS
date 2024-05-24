@@ -17,7 +17,7 @@ export default function Nosotros() {
       id="Sobre Mi"
     >
       <Container position="absolute" width="80%">
-        <Vector />
+        <Vector width="100rem" height="45rem" />
       </Container>
       <Container
         width="50%"
@@ -43,14 +43,14 @@ export default function Nosotros() {
         </Text>
         <Container flex="column" gap=".5rem" align="start">
           <Text
-            size="1.25rem"
+            size="1.5rem"
             color="#7F7676"
             textShadow="0px 4px 4px  #00000040"
           >
             {t('page.us.name')}
           </Text>
           <Text
-            size="1.25rem"
+            size="1.5rem"
             color="#7F7676"
             textShadow="0px 4px 4px  #00000040"
           >

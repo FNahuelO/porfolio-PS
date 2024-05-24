@@ -49,7 +49,7 @@ export default function Skills() {
         >
           {t('page.services.title')}
         </Text>
-        <Container justify="space-between">
+        <Container justify="space-between" height="70vh" align="center">
           {cardTexts.map((item, idx) => (
             <Card key={idx} {...item} />
           ))}

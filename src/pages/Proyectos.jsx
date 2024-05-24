@@ -133,7 +133,7 @@ export default function Proyectos() {
       <Container width="80vw" justify="center" height="75vh">
         <Slider cards={cards} />
       </Container>
-      <Container position="absolute" bottom="5.5%" left="2.5%">
+      <Container position="absolute" bottom="7.5%" left="2.5%">
         <Container position="relative">
           <Button
             width="5rem"
