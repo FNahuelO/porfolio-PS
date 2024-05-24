@@ -27,13 +27,19 @@ export default function Services({ title, text, color }) {
     >
       <img
         src={vectores[color.substring(1)]}
-        style={{ width: '15rem', height: '15rem' }}
+        style={{ width: '10rem', height: '10rem' }}
       />
 
       <Text weight="800" size="1.5rem" color="#4A4A4A">
         {title}
       </Text>
-      <Text color="#8D8D8D" weight="600" align="center" width="70%" size="1rem">
+      <Text
+        color="#8D8D8D"
+        weight="600"
+        align="center"
+        width="70%"
+        size=".8rem"
+      >
         {text}
       </Text>
     </Container>

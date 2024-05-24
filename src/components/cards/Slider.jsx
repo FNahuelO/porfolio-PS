@@ -22,7 +22,13 @@ function Card({ imagen, title, text, design, link }) {
       onMouseLeave={() => setShown(false)}
     >
       <img src={imagen} alt="" />
-      <Container width="90%" flex="column" margin="0 auto" gap=".5rem">
+      <Container
+        width="90%"
+        flex="column"
+        margin="0 auto"
+        gap=".5rem"
+        height="38%"
+      >
         <Text
           color="#78778A"
           size="1.25rem"
