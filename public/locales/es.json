@@ -26,7 +26,28 @@
       }
     },
     "prices": {
-      "title": "Proyectos"
+      "title": "Proyectos",
+      "bubble": " Utilizo metodologías de investigación y análisis para informar cada paso del proceso de diseño",
+      "ceppa": {
+        "title": "Ceppa - Website",
+        "text": "El objetivo principal fue crear una experiencia de usuario intuitiva y atractiva, facilitando la navegación y el acceso a la información para los pacientes. Incorporé elementos visuales calmantes y una estructura clara para transmitir confianza y profesionalismo, optimizando la interacción y satisfacción del usuario."
+      },
+      "novatrip": {
+        "title": "Marketplace",
+        "text": "Estas páginas web facilitan transacciones comerciales, permitiendo a los clientes explorar catálogos de productos, agregar artículos al carrito de compras y finalizar la compra mediante métodos de pago en línea"
+      },
+      "dia": {
+        "title": "Investigacion ux-ui y Rediseño Dia Online",
+        "text": "Este proyecto tiene como objetivo principal mejorar la experiencia del usuario (UX) y la interfaz de usuario (UI) de nuestra plataforma de compras en línea, optimizando la navegación, accesibilidad y satisfacción del cliente."
+      },
+      "barber": {
+        "title": "Web App mobile para Agendar Citas de Barbería",
+        "text": "Enfocada en facilitar la programación de citas, mediante la aplicación permite a los clientes reservar sus servicios de manera rápida y sencilla, seleccionando su barbero preferido, el tipo de servicio y el horario conveniente."
+      },
+      "boda": {
+        "title": "Web App Interactiva para Invitación de Casamiento",
+        "text": "La aplicación permite a los usuarios explorar detalles del evento, confirmar su asistencia y personalizar sus respuestas de manera fácil y divertida. Diseñada con una estética elegante y funcionalidades intuitivas, la web app garantiza una navegación fluida y una interacción enriquecedora para todos los usuarios."
+      }
     },
     "us": {
       "title": "Sobre Mi",
@@ -38,12 +59,12 @@
     },
     "contact": {
       "title": "Contacto",
-      "text": "Aquí no encontrarás esos tediosos formularios que consumen tu valioso tiempo. Simplemente haz clic en el botón y deja que tus ideas cobren vida con nosotros."
+      "bubble": "¡Listos para hacer magia juntos! Contáctenme para dar vida a sus ideas."
     }
   },
   "buttons": {
     "contact": "Contactame",
-
+    "send": "Enviar",
     "more": "Ver más"
   }
 }

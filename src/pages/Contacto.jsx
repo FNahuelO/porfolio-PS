@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import LuzIzq from '../assets/Luz'
 import Circle from '../assets/Circle'
 import * as Yup from 'yup'
@@ -10,6 +10,7 @@ import { useFormik } from 'formik'
 import { Text } from '../../style/Text'
 import styled from 'styled-components'
 import Nav from '../components/Nav'
+import { useTranslation } from 'react-i18next'
 
 const fields = [
   { name: 'nombre', label: 'Nombre', type: 'text' },
@@ -62,8 +63,18 @@ const SpeechBubble = styled.div`
 `
 
 export default function Contacto() {
-  const [modal, setModal] = useState({ form: true, confirm: false })
+  const {
+    t,
+    i18n: { language },
+  } = useTranslation()
+
   const [buttonLabel, setButtonLabel] = useState('Enviar')
+
+  useEffect(() => {
+    if (language === 'en') {
+      setButtonLabel('Send')
+    }
+  }, [language])
 
   const {
     handleSubmit,
@@ -137,10 +148,7 @@ export default function Contacto() {
         radius=".5rem"
         position="relative"
       >
-        <SpeechBubble>
-          ¡Listos para hacer magia juntos! Contáctenme para dar vida a sus
-          ideas.
-        </SpeechBubble>
+        <SpeechBubble>{t('page.contact.bubble')}</SpeechBubble>
         <Container
           width="100%"
           bg="#EF7D13"
@@ -225,7 +233,6 @@ export default function Contacto() {
                 weight="700"
                 radius=".5rem"
                 color="white"
-                // responsive={{ margin: '1rem 0 0 0', fontSize: '.8rem' }}
                 disabled={buttonLabel !== 'Enviar'}
                 hover={{
                   background: '#2F4A71',

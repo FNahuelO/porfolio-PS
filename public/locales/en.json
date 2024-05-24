@@ -26,7 +26,28 @@
       }
     },
     "prices": {
-      "title": "Projects"
+      "title": "Projects",
+      "bubble": "I use research and analysis methodologies to inform every step of the design process",
+      "ceppa": {
+        "title": "Ceppa - Website",
+        "text": "The main objective was to create an intuitive and attractive user experience, facilitating navigation and access to information for patients. I incorporated calming visual elements and a clear structure to convey confidence and professionalism, optimizing interaction and satisfaction of the user."
+      },
+      "novatrip": {
+        "title": "Marketplace",
+        "text": "These web pages facilitate commercial transactions, allowing customers to browse product catalogs, add items to the shopping cart, and check out using online payment methods"
+      },
+      "dia": {
+        "title": "UX-UI Research and Redesign Dia Online",
+        "text": "This project's main objective is to improve the user experience (UX) and user interface (UI) of our online shopping platform, optimizing navigation, accessibility and customer satisfaction."
+      },
+      "barber": {
+        "title": "Mobile Web App to Schedule Barber Appointments",
+        "text": "Focused on facilitating appointment scheduling, the application allows customers to book their services quickly and easily, selecting their preferred barber, the type of service and the convenient time."
+      },
+      "boda": {
+        "title": "Interactive Web App for Wedding Invitation",
+        "text": "The app allows users to explore event details, RSVP and personalize their responses in an easy and fun way. Designed with elegant aesthetics and intuitive functionalities, the web app ensures smooth navigation and rich interaction for all users."
+      }
     },
     "us": {
       "title": "About Me",
@@ -38,11 +59,12 @@
     },
     "contact": {
       "title": "Contact",
-      "text": "Here you won't find those tedious forms that consume your valuable time. Just click the button and let your ideas come to life with us."
+      "bubble": "Ready to make magic together! Contact me to bring your ideas to life."
     }
   },
   "buttons": {
     "contact": "Contact me",
+    "send": "Send",
 
     "more": "See more"
   }

@@ -43,50 +43,50 @@ const SpeechBubble = styled.div`
   }
 `
 
-const cardsData = [
-  {
-    imagen: ceppa,
-    title: 'Ceppa - Website',
-    link: 'https://ceppa.com.ar/',
-    design:
-      'https://www.figma.com/design/IMF0TX81fyEBhVfUtARBms/Untitled?node-id=0-1&t=H0M8buu7QVPiAWgs-0',
-    text: 'El objetivo principal fue crear una experiencia de usuario intuitiva y atractiva, facilitando la navegación y el acceso a la información para los pacientes. Incorporé elementos visuales calmantes y una estructura clara para transmitir confianza y profesionalismo, optimizando la interacción y satisfacción del usuario.',
-  },
-  {
-    imagen: novatrip,
-    title: 'Marketplace',
-    design:
-      'https://www.figma.com/design/FgAZO7uKOJzxM7KCjKAnCE/Market-place?node-id=1-3&t=d51fKW8Xf0Oc7jet-0',
-
-    text: 'Estas páginas web facilitan transacciones comerciales, permitiendo a los clientes explorar catálogos de productos, agregar artículos al carrito de compras y finalizar la compra mediante métodos de pago en línea',
-  },
-  {
-    imagen: dia,
-    design:
-      'https://www.figma.com/design/LqubeW6wzxAVfafmw6QdG5/Investigaci%25C3%25B3n-ux-ui-y-redise%25C3%25B1o-Dia-Online?node-id=0-1&t=vKJTpmTf4LAjviFc-0',
-    title: 'Investigacion ux-ui y Rediseño Dia Online',
-    text: 'Este proyecto tiene como objetivo principal mejorar la experiencia del usuario (UX) y la interfaz de usuario (UI) de nuestra plataforma de compras en línea, optimizando la navegación, accesibilidad y satisfacción del cliente.',
-  },
-  {
-    imagen: barber,
-    design:
-      'https://www.figma.com/design/LqubeW6wzxAVfafmw6QdG5/Investigaci%25C3%25B3n-ux-ui-y-redise%25C3%25B1o-Dia-Online?node-id=0-1&t=vKJTpmTf4LAjviFc-0',
-    title: 'Web App mobile para Agendar Citas en Barbería',
-    text: 'Enfocada en facilitar la programación de citas, mediante la aplicación permite a los clientes reservar sus servicios de manera rápida y sencilla, seleccionando su barbero preferido, el tipo de servicio y el horario conveniente.',
-  },
-  {
-    imagen: boda,
-    title: 'Web App Interactiva para Invitación de Casamiento',
-    design:
-      'https://www.figma.com/design/voRBdKLbb0IpDxGmQNpFIW/Invitacion-casamiento?node-id=0-1&t=u9vfuwlmAapyu4DL-0',
-    link: 'https://bodacrisyflor.vercel.app/',
-    text: 'La aplicación permite a los usuarios explorar detalles del evento, confirmar su asistencia y personalizar sus respuestas de manera fácil y divertida. Diseñada con una estética elegante y funcionalidades intuitivas, la web app garantiza una navegación fluida y una interacción enriquecedora para todos los usuarios.',
-  },
-]
-
 export default function Proyectos() {
   const { t } = useTranslation()
   const [view, setView] = useState(true)
+
+  const cardsData = [
+    {
+      imagen: ceppa,
+      title: t('page.prices.ceppa.title'),
+      link: 'https://ceppa.com.ar/',
+      design:
+        'https://www.figma.com/design/IMF0TX81fyEBhVfUtARBms/Untitled?node-id=0-1&t=H0M8buu7QVPiAWgs-0',
+      text: t('page.prices.ceppa.text'),
+    },
+    {
+      imagen: novatrip,
+      title: t('page.prices.novatrip.title'),
+      design:
+        'https://www.figma.com/design/FgAZO7uKOJzxM7KCjKAnCE/Market-place?node-id=1-3&t=d51fKW8Xf0Oc7jet-0',
+
+      text: t('page.prices.novatrip.text'),
+    },
+    {
+      imagen: dia,
+      design:
+        'https://www.figma.com/design/LqubeW6wzxAVfafmw6QdG5/Investigaci%25C3%25B3n-ux-ui-y-redise%25C3%25B1o-Dia-Online?node-id=0-1&t=vKJTpmTf4LAjviFc-0',
+      title: t('page.prices.dia.title'),
+      text: t('page.prices.dia.text'),
+    },
+    {
+      imagen: barber,
+      design:
+        'https://www.figma.com/design/LqubeW6wzxAVfafmw6QdG5/Investigaci%25C3%25B3n-ux-ui-y-redise%25C3%25B1o-Dia-Online?node-id=0-1&t=vKJTpmTf4LAjviFc-0',
+      title: t('page.prices.barber.title'),
+      text: t('page.prices.barber.text'),
+    },
+    {
+      imagen: boda,
+      title: t('page.prices.boda.title'),
+      design:
+        'https://www.figma.com/design/voRBdKLbb0IpDxGmQNpFIW/Invitacion-casamiento?node-id=0-1&t=u9vfuwlmAapyu4DL-0',
+      link: 'https://bodacrisyflor.vercel.app/',
+      text: t('page.prices.boda.text'),
+    },
+  ]
 
   const cards = cardsData.map((card) => ({
     key: uuidv4(),
@@ -145,12 +145,7 @@ export default function Proyectos() {
           >
             <Vector width="2rem" height="2rem" />
           </Button>
-          {view && (
-            <SpeechBubble>
-              Utilizo metodologías de investigación y análisis para informar
-              cada paso del proceso de diseño
-            </SpeechBubble>
-          )}
+          {view && <SpeechBubble>{t('page.prices.bubble')}</SpeechBubble>}
         </Container>
       </Container>
     </Container>
