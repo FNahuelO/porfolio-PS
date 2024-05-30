@@ -20,7 +20,7 @@ export default function Nosotros() {
         <Vector width="100rem" height="45rem" />
       </Container>
       <Container
-        width="50%"
+        width="40%"
         flex="column"
         height="30%"
         gap="1rem"
@@ -36,22 +36,24 @@ export default function Nosotros() {
           size="2.5rem"
           weight="700"
           align="start"
-          color="#FFFFFF80"
+          color="#FFFFFF90"
           textShadow="-3px 3px 7.6px #F37008"
         >
           {t('page.us.title')}
         </Text>
-        <Container flex="column" gap=".5rem" align="start">
+        <Container flex="column" gap="1rem" align="start">
           <Text
-            size="1.5rem"
+            size="1.25rem"
             color="#7F7676"
+            align="justify"
             textShadow="0px 4px 4px  #00000040"
           >
             {t('page.us.name')}
           </Text>
           <Text
-            size="1.5rem"
+            size="1.25rem"
             color="#7F7676"
+            align="justify"
             textShadow="0px 4px 4px  #00000040"
           >
             {t('page.us.text')}

@@ -36,7 +36,7 @@ export default function Skills() {
         <Text
           size="2rem"
           weight="800"
-          align="start"
+          align="center"
           color="#43ADB9"
           style={{
             background:

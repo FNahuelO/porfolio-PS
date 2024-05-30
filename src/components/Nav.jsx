@@ -49,19 +49,19 @@ export default function Nav() {
 
   return (
     <Container
-      bg={scrolled ? '#ffffffb8' : 'none'}
+      bg={scrolled ? '#ffffff' : 'none'}
       height="5vh"
-      padding="1.5rem 0"
+      padding="3.5rem 0 1rem 0"
       justify="center"
       align="center"
       position="fixed"
-      index="999"
+      index="40"
       width="100%"
       gap="2rem"
       top="0"
     >
       <Container
-        width={isContactPage ? '60%' : '55%'}
+        width="55%"
         align="center"
         justify={isContactPage ? 'center' : 'flex-start'}
         transform={isContactPage ? 'translateX(15%)' : null}
@@ -72,6 +72,7 @@ export default function Nav() {
             href={isContactPage ? `/#${item}` : `#${item}`}
             key={idx}
             style={{ textDecoration: 'none' }}
+            className="text-hover"
           >
             <Text key={idx} color="#4A4A4A" weight="500" size="1.25rem">
               {item}
@@ -83,6 +84,7 @@ export default function Nav() {
         <a
           href={isContactPage ? `/#${labels2[0]}` : `#${labels2[0]}`}
           style={{ textDecoration: 'none' }}
+          className="text-hover"
         >
           <Text
             color={scrolled ? '#4A4A4A' : 'white'}
@@ -93,24 +95,30 @@ export default function Nav() {
             {labels2[0]}
           </Text>
         </a>
-        {!isContactPage && (
-          <Link to={`${labels2[1].toLowerCase()}`}>
-            <Text
-              color={scrolled ? '#4A4A4A' : 'white'}
-              weight="500"
-              size="1.25rem"
-              textShadow="0px 4px 4px #00000040"
-            >
-              {labels2[1]}
-            </Text>
-          </Link>
-        )}
+        <Link
+          to={
+            isContactPage
+              ? `/${labels2[1].toLowerCase()}`
+              : `${labels2[1].toLowerCase()}`
+          }
+          className="text-hover"
+        >
+          <Text
+            color={scrolled ? '#4A4A4A' : 'white'}
+            weight="500"
+            size="1.25rem"
+            textShadow="0px 4px 4px #00000040"
+          >
+            {labels2[1]}
+          </Text>
+        </Link>
       </Container>
 
       <Container gap="1.5rem" align="center">
         <Text
           color={scrolled ? '#4A4A4A' : 'white'}
           size="1.25rem"
+          textShadow="0px 4px 4px #00000040"
           onClick={() => cambiarIdioma('es')}
         >
           ES
@@ -119,6 +127,7 @@ export default function Nav() {
         <Text
           color={scrolled ? '#4A4A4A' : 'white'}
           size="1.25rem"
+          textShadow="0px 4px 4px #00000040"
           onClick={() => cambiarIdioma('en')}
         >
           EN

@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const Text = styled.span`
   position: ${({ position }) => position || null};
@@ -31,6 +31,15 @@ export const Text = styled.span`
   letter-spacing: ${({ spacing }) => spacing || null};
   word-wrap: ${({ wrap }) => wrap || null};
   opacity: ${({ opacity }) => opacity || null};
+  z-index: ${({ index }) => index || null};
+
+  &:hover {
+    ${({ hover }) =>
+      hover &&
+      css`
+        ${hover}
+      `};
+  }
 `
 
 export const Hr = styled.hr`

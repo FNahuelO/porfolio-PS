@@ -6,7 +6,7 @@ import styled from 'styled-components'
 const SwitchWrapper = styled.label`
   position: relative;
   display: inline-block;
-  width: 50px;
+  width: 2.5rem;
   height: 2px;
 `
 
@@ -24,10 +24,10 @@ const Slider = styled.span`
   &:before {
     position: absolute;
     content: '';
-    height: 15px;
-    width: 15px;
+    height: 10px;
+    width: 10px;
     left: 0;
-    bottom: -6px;
+    bottom: -4px;
     background-color: ${({ color }) => color || 'white'};
     transition: 0.4s;
     border-radius: 50%;
@@ -37,12 +37,8 @@ const Slider = styled.span`
 const SwitchInput = styled.input`
   display: none;
 
-  &:checked + ${Slider} {
-    background-color: #2196f3;
-  }
-
   &:checked + ${Slider}:before {
-    transform: translateX(50px);
+    transform: translateX(15px);
   }
 `
 

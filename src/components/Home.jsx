@@ -33,7 +33,7 @@ export default function Home() {
       >
         <LuzIzq />
       </Container>
-      <Container flex="column" width="40%" align="start" index="5">
+      <Container flex="column" width="40%" align="start" index="5" gap="1.5rem">
         <Text size="3.5rem" weight="800" color="#0B0A0F">
           {t('page.home.name')}
         </Text>
@@ -48,7 +48,7 @@ export default function Home() {
         >
           {t('page.home.desing')}
         </Text>
-        <Text size="1.25rem" color="#666768">
+        <Text size="1.25rem" color="#666768" width="87%">
           {t('page.home.msg')}
         </Text>
         <Link to="/contacto">
@@ -70,11 +70,11 @@ export default function Home() {
           </Button>
         </Link>
       </Container>
-      <Container index="10" transform="translate(0,3rem)">
+      <Container index="10" transform="translate(5rem,3rem)">
         <Vector width="50rem" height="45rem" />
       </Container>
-      <Container position="absolute" right="0" top="0">
-        <Circle width="50rem" height="50rem" />
+      <Container position="absolute" right="0" top="-3rem">
+        <Circle width="50rem" height="45rem" />
       </Container>
     </Container>
   )

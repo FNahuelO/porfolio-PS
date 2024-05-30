@@ -37,7 +37,7 @@ function Card({ imagen, title, text, design, link }) {
         >
           {title}
         </Text>
-        <Text color="#78778A" size=".7rem" align="start" padding="0 .5rem">
+        <Text color="#78778A" size=".7rem" align="justify" padding="0 1.5rem">
           {text}
         </Text>
       </Container>
@@ -45,7 +45,7 @@ function Card({ imagen, title, text, design, link }) {
         justify="center"
         gap="1rem"
         position="absolute"
-        bottom="1rem"
+        bottom="2rem"
         width="100%"
       >
         {design && (
@@ -60,6 +60,12 @@ function Card({ imagen, title, text, design, link }) {
             border="none"
             shadow="0px 4px 0px 0px #CDCDCD40, 0px 4px 0px 0px #ACACAC40 inset, 0px 4px 4px 0px #00000040"
             onClick={() => window.open(design, '_blank')}
+            hover={{
+              backgroundColor: '#4A82EC',
+              color: 'white',
+              boxShadow:
+                '0px 4px 0px 0px #CDCDCD40, 0px 4px 0px 0px #ACACAC40 inset, 0px 4px 4px 0px #00000040',
+            }}
           >
             Ver diseño
           </Button>
@@ -76,6 +82,10 @@ function Card({ imagen, title, text, design, link }) {
             justify="center"
             shadow="0px 4px 0px 0px #CDCDCD40, 0px 4px 0px 0px #ACACAC40 inset, 0px 4px 4px 0px #00000040"
             onClick={() => window.open(link, '_blank')}
+            hover={{
+              backgroundColor: '#4A82EC',
+              color: 'white',
+            }}
           >
             Ver proyecto
           </Button>

@@ -35,7 +35,7 @@ const inputStyles = {
 const SpeechBubble = styled.div`
   position: absolute;
   top: 7rem;
-  right: 0;
+  right: 1rem;
   transform: translateX(70%);
   background: #f9b233;
   border-radius: 2rem;
@@ -45,7 +45,7 @@ const SpeechBubble = styled.div`
   text-align: start;
   line-height: 1.4;
   width: 20rem;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 14px 9px 7.7px 0px #68009940;
   z-index: 99;
 
   &:after {
@@ -144,7 +144,7 @@ export default function Contacto() {
         width="50%"
         height="65%"
         flex="column"
-        index="99"
+        index="35"
         radius=".5rem"
         position="relative"
       >
@@ -160,6 +160,7 @@ export default function Contacto() {
             height: '90%',
             backgroundColor: '#FFFFFF82',
             backdropFilter: 'blur(39.75px)',
+            borderRadius: '0 0 1rem 1rem',
           }}
         >
           <Container
@@ -231,14 +232,13 @@ export default function Contacto() {
                 bg="#EF7D13"
                 width="90%"
                 weight="700"
-                radius=".5rem"
+                radius="2rem"
                 color="white"
                 disabled={buttonLabel !== 'Enviar'}
                 hover={{
                   background: '#2F4A71',
                   color: 'white',
                   boxShadow: '0 4px 4px 0 #00000040',
-                  border: 'none',
                 }}
               >
                 {buttonLabel}

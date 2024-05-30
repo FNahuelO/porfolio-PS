@@ -18,6 +18,7 @@ export default function Carroussel(props) {
     setOffsetRadius(props.offset)
     setShowArrows(props.showArrows)
   }, [props.offset, props.showArrows])
+
   const [goToSlide, setGoToSlide] = useState(props.activeCard)
 
   useEffect(() => {
@@ -49,12 +50,44 @@ export default function Carroussel(props) {
     setTouchEndX(null)
   }
 
+  const renderCard = (slide, index) => {
+    const isActive = index === goToSlide
+    const isLeft = index === (goToSlide - 1 + cards.length) % cards.length
+    const isRight = index === (goToSlide + 1) % cards.length
+
+    const cardStyle = {
+      // Estilo común para todas las tarjetas
+      transition: 'transform 0.5s ease-in-out',
+      width: '20rem',
+      height: '100%',
+      // Estilos c,ndicionales
+      ...(isActive && { transform: 'scale(1)', zIndex: 1 }), // Central
+      ...(isLeft && {
+        transform: 'translateX(30%) scale(1.65)',
+        zIndex: 0,
+      }), // Lateral izquierda
+      ...(isRight && {
+        transform: 'translateX(-30%) scale(1.65)',
+        zIndex: 0,
+      }), // Lateral derecha
+    }
+
+    return (
+      <div key={index} style={cardStyle} onClick={slide.onClick}>
+        {slide.content}
+      </div>
+    )
+  }
+
   return (
     <div
       style={{ width: props.width, height: props.height, margin: props.margin }}
     >
       <Carousel
-        slides={cards}
+        slides={cards.map((card, index) => ({
+          ...card,
+          content: renderCard(card, index),
+        }))}
         goToSlide={goToSlide}
         offsetRadius={offsetRadius}
         showNavigation={showArrows}

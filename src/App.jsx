@@ -20,8 +20,8 @@ function App() {
       <Router>
         <Container flex="column">
           <Routes>
-            <Route path="/contacto" element={<Contacto />} />
             <Route path="/" element={<Home />} />
+            <Route path="/contacto" element={<Contacto />} />
           </Routes>
           <Footer />
         </Container>

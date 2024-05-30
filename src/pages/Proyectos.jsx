@@ -24,7 +24,7 @@ const SpeechBubble = styled.div`
   padding: 2rem 3rem;
   color: white;
   font-family: 'Josefin Sans', 
-  font-size: 16px;
+  font-size: 1.1rem;
   text-align: start;
   line-height: 1.4;
   width: 20rem;
@@ -112,11 +112,16 @@ export default function Proyectos() {
       id="Proyectos"
       position="relative"
     >
-      <Container flex="column" align="center">
+      <Container
+        flex="column"
+        align="center"
+        transform="translateY(-2rem)"
+        index="55"
+      >
         <Text
           size="2rem"
           weight="800"
-          color="#43ADB9"
+          color="#D1A14A"
           style={{
             background:
               'linear-gradient(0deg, rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.01)), linear-gradient(180deg, #76B1E1 -7%, #FFFFFF -6.99%, #D5D5D5 31.95%, #F2F5F7 56.55%, #F7F7F7 75%)',

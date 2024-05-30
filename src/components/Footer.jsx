@@ -8,6 +8,7 @@ import Whatsapp from '../assets/Whatsapp'
 import { useTranslation } from 'react-i18next'
 import { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
+import './buttons/style.css'
 
 export default function Contacto() {
   const { t } = useTranslation()
@@ -50,7 +51,7 @@ export default function Contacto() {
       style={{
         backgroundImage: `url(/images/bg.svg)`,
         backgroundSize: 'cover',
-        backgroundPositionY: '-40%',
+        backgroundPositionY: '-35%',
         backgroundRepeat: 'no-repeat',
       }}
     >
@@ -80,39 +81,36 @@ export default function Contacto() {
           </Text>
           <Container align="center" gap="4rem">
             {labels.map((item, idx) => {
-              if (!(isContactPage && item === t('page.contact.title'))) {
-                let link
-                if (location.pathname === '/') {
-                  link =
-                    item === t('page.contact.title') ? '/contacto' : `#${item}`
-                } else {
-                  link = `/#${item}`
-                }
-                return (
-                  <a href={link} key={idx} style={{ textDecoration: 'none' }}>
-                    <Text key={idx} color="#FFFFFF" weight="500">
-                      {item}
-                    </Text>
-                  </a>
-                )
-              }
-              return null
+              let link =
+                item === t('page.contact.title') ? '/contacto' : `/#${item}`
+
+              return (
+                <a
+                  href={link}
+                  key={idx}
+                  style={{ textDecoration: 'none' }}
+                  className="text-hover"
+                >
+                  <Text key={idx} color="#FFFFFF" weight="500">
+                    {item}
+                  </Text>
+                </a>
+              )
             })}
           </Container>
-          <Container align="center" gap="2rem">
-            {vectores.map((item, idx) => (
-              <Container
-                width="2.5rem"
-                height="2.5rem"
-                radius="50%"
-                bg="white"
-                align="center"
-                justify="center"
-                key={idx}
-              >
-                {item}
-              </Container>
-            ))}
+          <Container className="wrapper">
+            <a href="#" className="icon">
+              <i className="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#" className="icon">
+              <i className="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="#" className="icon">
+              <i className="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="#" className="icon">
+              <i className="fa-brands fa-linkedin-in"></i>
+            </a>
           </Container>
         </Container>
       </Container>

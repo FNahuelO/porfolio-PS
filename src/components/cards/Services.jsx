@@ -22,7 +22,7 @@ export default function Services({ title, text, color }) {
       radius="2rem"
       gap="1rem"
       hover={{
-        boxShadow: '0px 7px 79.3px -23px' + color,
+        boxShadow: '0px 0px 10px 5px ' + color,
       }}
     >
       <img
