@@ -3,26 +3,30 @@ import { useState, useEffect, useRef } from 'react'
 import { config } from 'react-spring'
 
 export default function Carroussel(props) {
-  const table = props.cards?.map((element, index) => {
-    return { ...element, onClick: () => setGoToSlide(index) }
-  })
-
   const [offsetRadius, setOffsetRadius] = useState(2)
   const [showArrows, setShowArrows] = useState(false)
-  const [cards] = useState(table)
+  const [cards, setCards] = useState([])
+  const [goToSlide, setGoToSlide] = useState(props.activeCard)
   const [touchStartX, setTouchStartX] = useState(null)
   const [touchEndX, setTouchEndX] = useState(null)
   const activeCardRef = useRef(props.activeCard)
+
+  useEffect(() => {
+    const table = props.cards?.map((element, index) => ({
+      ...element,
+      onClick: () => setGoToSlide(index),
+    }))
+    setCards(table)
+  }, [props.cards]) // Actualiza las cartas cuando cambian las props
 
   useEffect(() => {
     setOffsetRadius(props.offset)
     setShowArrows(props.showArrows)
   }, [props.offset, props.showArrows])
 
-  const [goToSlide, setGoToSlide] = useState(props.activeCard)
-
   useEffect(() => {
     activeCardRef.current = props.activeCard
+    setGoToSlide(props.activeCard)
   }, [props.activeCard])
 
   const handleTouchStart = (event) => {
@@ -60,7 +64,7 @@ export default function Carroussel(props) {
       transition: 'transform 0.5s ease-in-out',
       width: '20rem',
       height: '100%',
-      // Estilos c,ndicionales
+      // Estilos condicionales
       ...(isActive && { transform: 'scale(1)', zIndex: 1 }), // Central
       ...(isLeft && {
         transform: 'translateX(30%) scale(1.65)',
@@ -91,7 +95,7 @@ export default function Carroussel(props) {
         goToSlide={goToSlide}
         offsetRadius={offsetRadius}
         showNavigation={showArrows}
-        animationConfig={config.gentle}
+        animationConfig={config.default}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}

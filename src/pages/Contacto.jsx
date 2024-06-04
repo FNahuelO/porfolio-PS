@@ -116,18 +116,7 @@ export default function Contacto() {
       overflow="hidden"
     >
       <Nav />
-      <Container position="absolute" top="-1rem" left="-3rem">
-        <LuzIzq />
-      </Container>
-      <Container
-        position="absolute"
-        bottom="-.5rem"
-        right="-3rem"
-        transform="rotate(180deg)"
-        overflow="hidden"
-      >
-        <LuzIzq />
-      </Container>
+
       <Container position="absolute" right="0" top="0">
         <Circle width="40rem" height="40rem" />
       </Container>

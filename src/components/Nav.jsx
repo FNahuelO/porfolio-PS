@@ -60,13 +60,7 @@ export default function Nav() {
       gap="2rem"
       top="0"
     >
-      <Container
-        width="55%"
-        align="center"
-        justify={isContactPage ? 'center' : 'flex-start'}
-        transform={isContactPage ? 'translateX(15%)' : null}
-        gap="4rem"
-      >
+      <Container width="55%" align="center" gap="4rem">
         {labels.map((item, idx) => (
           <a
             href={isContactPage ? `/#${item}` : `#${item}`}
@@ -119,7 +113,6 @@ export default function Nav() {
           color={scrolled ? '#4A4A4A' : 'white'}
           size="1.25rem"
           textShadow="0px 4px 4px #00000040"
-          onClick={() => cambiarIdioma('es')}
         >
           ES
         </Text>
@@ -128,7 +121,6 @@ export default function Nav() {
           color={scrolled ? '#4A4A4A' : 'white'}
           size="1.25rem"
           textShadow="0px 4px 4px #00000040"
-          onClick={() => cambiarIdioma('en')}
         >
           EN
         </Text>

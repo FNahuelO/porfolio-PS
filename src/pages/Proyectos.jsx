@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 import { Container } from '../../style/Container'
 import { Text } from '../../style/Text'
 import Card from '../components/cards/Slider'
-import Modal from '../components/modal/Modal'
 import Slider from '../components/Slider'
 import Vector from '../assets/VectorP'
 import { v4 as uuidv4 } from 'uuid'
@@ -23,7 +22,7 @@ const SpeechBubble = styled.div`
   border-radius: 2rem;
   padding: 2rem 3rem;
   color: white;
-  font-family: 'Josefin Sans', 
+  font-family: 'Josefin Sans', sans-serif;
   font-size: 1.1rem;
   text-align: start;
   line-height: 1.4;
@@ -34,7 +33,7 @@ const SpeechBubble = styled.div`
     content: '';
     position: absolute;
     bottom: -20px;
-    left: 20px; /* Ajusta la posición horizontal del triángulo aquí */
+    left: 20px;
     width: 0;
     height: 0;
     border-left: 15px solid transparent;
@@ -44,10 +43,11 @@ const SpeechBubble = styled.div`
 `
 
 export default function Proyectos() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const [view, setView] = useState(true)
+  const [cardsData, setCardsData] = useState([])
 
-  const cardsData = [
+  const getCardsData = () => [
     {
       imagen: ceppa,
       title: t('page.prices.ceppa.title'),
@@ -61,7 +61,6 @@ export default function Proyectos() {
       title: t('page.prices.novatrip.title'),
       design:
         'https://www.figma.com/design/FgAZO7uKOJzxM7KCjKAnCE/Market-place?node-id=1-3&t=d51fKW8Xf0Oc7jet-0',
-
       text: t('page.prices.novatrip.text'),
     },
     {
@@ -88,18 +87,23 @@ export default function Proyectos() {
     },
   ]
 
-  const cards = cardsData.map((card) => ({
-    key: uuidv4(),
-    content: (
-      <Card
-        imagen={card.imagen}
-        title={card.title}
-        link={card.link}
-        design={card.design}
-        text={card.text}
-      />
-    ),
-  }))
+  useEffect(() => {
+    const data = getCardsData()
+    setCardsData(() =>
+      data.map((card) => ({
+        key: uuidv4(),
+        content: (
+          <Card
+            imagen={card.imagen}
+            title={card.title}
+            link={card.link}
+            design={card.design}
+            text={card.text}
+          />
+        ),
+      })),
+    )
+  }, [i18n.language, t])
 
   return (
     <Container
@@ -128,14 +132,14 @@ export default function Proyectos() {
             backgroundClip: 'text',
             textFillColor: 'transparent',
             textShadow:
-              ' 0px 4px 4px rgba(0, 0, 0, 0.25), 4px 7px 10.2px rgba(0, 0, 0, 0.28)',
+              '0px 4px 4px rgba(0, 0, 0, 0.25), 4px 7px 10.2px rgba(0, 0, 0, 0.28)',
           }}
         >
           {t('page.prices.title')}
         </Text>
       </Container>
       <Container width="80vw" justify="center" height="75vh">
-        <Slider cards={cards} />
+        {cardsData?.length && <Slider cards={cardsData} />}
       </Container>
       <Container position="absolute" bottom="7.5%" left="4%">
         <Container position="relative">
@@ -147,6 +151,9 @@ export default function Proyectos() {
             shadow="0px 4px 4px 0px #C7DAF278 inset,0px 4px 4px 0px #00000026"
             padding=".5rem 0 0 0"
             onClick={() => setView(!view)}
+            hover={{
+              background: '#5165D3',
+            }}
           >
             <Vector width="2rem" height="2rem" />
           </Button>

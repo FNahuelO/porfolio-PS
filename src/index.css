@@ -23,11 +23,11 @@
 }
 
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #ff6600;
+  background-color: #f7863a;
   border-radius: 6px;
 }
 
@@ -105,6 +105,10 @@ button:focus-visible {
   width: 3rem !important;
   height: 3rem;
   background-color: #535bf2;
+}
+
+.text-hover {
+  transition: text-shadow 0.3s, transform 0.3s;
 }
 
 .text-hover:hover {

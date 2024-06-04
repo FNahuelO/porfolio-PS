@@ -34,7 +34,12 @@ export default function Home() {
         <LuzIzq />
       </Container>
       <Container flex="column" width="40%" align="start" index="5" gap="1.5rem">
-        <Text size="3.5rem" weight="800" color="#0B0A0F">
+        <Text
+          size="3.5rem"
+          weight="800"
+          color="#0B0A0F"
+          transform="translateY(1.5rem)"
+        >
           {t('page.home.name')}
         </Text>
         <Text
@@ -58,13 +63,15 @@ export default function Home() {
             padding=".75rem 2rem"
             weight="700"
             radius="3rem"
-            borderBottom="5px solid #BF4109FC"
-            shadow="5px 6px 3.9px 0px #00000040"
             margin=".5rem 0"
             display="flex"
             align="center"
             gap="1rem"
             cursor="pointer"
+            transition="background 0.3s, border-bottom 0.3s, box-shadow 0.03"
+            hover={{
+              background: '#5165D3',
+            }}
           >
             {t('buttons.contact') + '!'} <Mail />
           </Button>
