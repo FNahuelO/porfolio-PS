@@ -125,14 +125,12 @@ export default function Proyectos() {
         <Text
           size="2rem"
           weight="800"
-          color="#D1A14A"
+          color="#43ADB9"
           style={{
             background:
               'linear-gradient(0deg, rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.01)), linear-gradient(180deg, #76B1E1 -7%, #FFFFFF -6.99%, #D5D5D5 31.95%, #F2F5F7 56.55%, #F7F7F7 75%)',
             backgroundClip: 'text',
             textFillColor: 'transparent',
-            textShadow:
-              '0px 4px 4px rgba(0, 0, 0, 0.25), 4px 7px 10.2px rgba(0, 0, 0, 0.28)',
           }}
         >
           {t('page.prices.title')}
