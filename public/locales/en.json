@@ -65,7 +65,8 @@
   "buttons": {
     "contact": "Contact me",
     "send": "Send",
-
-    "more": "See more"
+    "more": "See more",
+    "design": "View design", 
+    "proyect": "View project"
   }
 }

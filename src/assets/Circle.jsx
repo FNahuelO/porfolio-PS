@@ -8,7 +8,12 @@ const SVGComponent = (props) => (
     xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
-    <circle cx={472.094} cy={338} r={472} fill={props?.color ?? '#607FF3'} />
+    <circle
+      cx={472.094}
+      cy={338}
+      r={props?.color ? 338 : 472}
+      fill={props?.color ?? '#607FF3'}
+    />
   </svg>
 )
 export default SVGComponent

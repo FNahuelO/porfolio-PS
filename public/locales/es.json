@@ -65,6 +65,8 @@
   "buttons": {
     "contact": "Contactame",
     "send": "Enviar",
-    "more": "Ver más"
+    "more": "Ver más",
+    "design": "Ver diseño",
+    "proyect": "Ver proyecto"
   }
 }

@@ -5,6 +5,7 @@ import Instagram from '../assets/Instagram'
 import Facebook from '../assets/Facebook'
 import Twitter from '../assets/Twitter'
 import Whatsapp from '../assets/Whatsapp'
+import Circle from '../assets/Circle'
 import { useTranslation } from 'react-i18next'
 import { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
@@ -51,10 +52,20 @@ export default function Contacto() {
       style={{
         backgroundImage: `url(/images/bg.svg)`,
         backgroundSize: 'cover',
-        backgroundPositionY: '-35%',
+        backgroundPositionY: '-30%',
         backgroundRepeat: 'no-repeat',
       }}
     >
+      {isContactPage && (
+        <Container
+          position="absolute"
+          left="-1%"
+          top="-38%"
+          transform="rotate(270deg)"
+        >
+          <Circle color="#FB980F54" width="45rem" height="45rem" />
+        </Container>
+      )}
       <Container
         flex="column"
         justify="center"

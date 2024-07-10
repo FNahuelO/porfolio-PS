@@ -81,7 +81,7 @@ export default function Nav() {
           className="text-hover"
         >
           <Text
-            color={scrolled ? '#4A4A4A' : 'white'}
+            color={'#4A4A4A'}
             weight="500"
             size="1.25rem"
             textShadow="0px 4px 4px #00000040"
@@ -98,7 +98,7 @@ export default function Nav() {
           className="text-hover"
         >
           <Text
-            color={scrolled ? '#4A4A4A' : 'white'}
+            color={'#4A4A4A'}
             weight="500"
             size="1.25rem"
             textShadow="0px 4px 4px #00000040"
@@ -110,15 +110,15 @@ export default function Nav() {
 
       <Container gap="1.5rem" align="center">
         <Text
-          color={scrolled ? '#4A4A4A' : 'white'}
+          color={'#4A4A4A'}
           size="1.25rem"
           textShadow="0px 4px 4px #00000040"
         >
           ES
         </Text>
-        <Switch color={scrolled ? '#4A4A4A' : 'white'} />
+        <Switch color={'#4A4A4A'} />
         <Text
-          color={scrolled ? '#4A4A4A' : 'white'}
+          color={'#4A4A4A'}
           size="1.25rem"
           textShadow="0px 4px 4px #00000040"
         >

@@ -4,8 +4,10 @@ import { useSpring, animated } from 'react-spring'
 import { Text } from '../../../style/Text'
 import { Container } from '../../../style/Container'
 import { Button } from '../../../style/Buttons'
+import { useTranslation } from 'react-i18next'
 
 function Card({ imagen, title, text, design, link }) {
+  const { t } = useTranslation()
   const [show, setShown] = useState(false)
 
   const props3 = useSpring({
@@ -67,7 +69,7 @@ function Card({ imagen, title, text, design, link }) {
                 '0px 4px 0px 0px #CDCDCD40, 0px 4px 0px 0px #ACACAC40 inset, 0px 4px 4px 0px #00000040',
             }}
           >
-            Ver diseño
+            {t('buttons.design')}
           </Button>
         )}
         {link && (
@@ -87,7 +89,7 @@ function Card({ imagen, title, text, design, link }) {
               color: 'white',
             }}
           >
-            Ver proyecto
+            {t('buttons.proyect')}
           </Button>
         )}
       </Container>

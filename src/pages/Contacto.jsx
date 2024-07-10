@@ -27,9 +27,8 @@ const inputStyles = {
   color: '#2C16478A',
   padding: '1rem',
   fontSize: 'smaller',
-  borderBottom: '.5px solid #00000036',
-  borderRadius: '.5rem',
-  boxShadow: '0px 4px 8.4px 0px #00000040',
+  border: '.5px solid #0000000f',
+  borderRadius: '1rem',
 }
 
 const SpeechBubble = styled.div`
@@ -126,7 +125,7 @@ export default function Contacto() {
         bottom="-20%"
         transform="rotate(180deg)"
       >
-        <Circle color="#FB980F54" width="40rem" height="40rem" />
+        <Circle color="#FB980F54" width="45rem" height="45rem" />
       </Container>
 
       <Container
@@ -192,6 +191,7 @@ export default function Contacto() {
                         resize: 'none',
                         color: '#2C16478A',
                         fontFamily: 'Josefin Sans',
+                        fontSize: '1.1rem',
                       }}
                     />
                   ) : (
@@ -203,14 +203,14 @@ export default function Contacto() {
                       value={values[field.name]}
                       placeholder={field.label}
                       style={{
-                        fontSize: 'smaller',
-                        boxShadow: '0px 4px 8.4px 0px #00000040',
+                        borderRadius: '1rem',
+                        fontSize: '1.1rem',
                       }}
                       {...inputStyles}
                     />
                   )}
                   {touched[field.name] && errors[field.name] ? (
-                    <Text color="red" size=".7rem" padding="0 .5rem">
+                    <Text color="red" size=".8rem" padding="0 .5rem">
                       {errors[field.name]}
                     </Text>
                   ) : null}
