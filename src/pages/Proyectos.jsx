@@ -73,7 +73,7 @@ export default function Proyectos() {
     {
       imagen: barber,
       design:
-        'https://www.figma.com/design/LqubeW6wzxAVfafmw6QdG5/Investigaci%25C3%25B3n-ux-ui-y-redise%25C3%25B1o-Dia-Online?node-id=0-1&t=vKJTpmTf4LAjviFc-0',
+        'https://www.figma.com/design/wbWjZJPCE1RmK1ehpjCnGx/Gestionador-de-Citas?node-id=0-1&t=R3rWBMvq1jK3VWnO-0',
       title: t('page.prices.barber.title'),
       text: t('page.prices.barber.text'),
     },

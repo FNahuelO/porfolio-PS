@@ -29,6 +29,7 @@ function Home() {
         <AboutMe />
         <Skills />
         <Proyectos />
+        <Footer />
       </Container>
     </>
   )

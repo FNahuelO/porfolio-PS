@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import LuzIzq from '../assets/Luz'
 import Circle from '../assets/Circle'
 import * as Yup from 'yup'
 import { Input } from '../../style/Input'
@@ -8,6 +7,7 @@ import { Form } from '../../style/Forms'
 import { Container } from '../../style/Container'
 import { useFormik } from 'formik'
 import { Text } from '../../style/Text'
+import Vector from '../assets/VectorP'
 import styled from 'styled-components'
 import Nav from '../components/Nav'
 import { useTranslation } from 'react-i18next'
@@ -21,7 +21,6 @@ const fields = [
 
 const inputStyles = {
   bg: '#FFFFFF82',
-  border: 'none',
   width: '90%',
   outline: 'none',
   color: '#2C16478A',
@@ -75,6 +74,14 @@ export default function Contacto() {
     }
   }, [language])
 
+  const labels = [
+    t('page.home.title'),
+    t('page.us.title'),
+    t('page.services.title'),
+    t('page.prices.title'),
+    t('page.contact.title'),
+  ]
+
   const {
     handleSubmit,
     handleChange,
@@ -104,138 +111,216 @@ export default function Contacto() {
     },
   })
   return (
-    <Container
-      height="100vh"
-      flex="column"
-      align="center"
-      justify="center"
-      bg="#FFFFFF"
-      width="100%"
-      position="relative"
-      overflow="hidden"
-    >
-      <Nav />
-
-      <Container position="absolute" right="0" top="0">
-        <Circle width="40rem" height="40rem" />
-      </Container>
+    <>
       <Container
-        position="absolute"
-        left="0"
-        bottom="-20%"
-        transform="rotate(180deg)"
-      >
-        <Circle color="#FB980F54" width="45rem" height="45rem" />
-      </Container>
-
-      <Container
-        width="50%"
-        height="65%"
+        height="100vh"
         flex="column"
-        index="35"
-        radius=".5rem"
+        align="center"
+        justify="center"
+        bg="#FFFFFF"
+        width="100%"
         position="relative"
       >
-        <SpeechBubble>{t('page.contact.bubble')}</SpeechBubble>
+        <Nav />
+
+        <Container position="absolute" right="0" top="0">
+          <Circle width="40rem" height="40rem" />
+        </Container>
         <Container
-          width="100%"
-          bg="#EF7D13"
-          radius="1rem 1rem 0 0"
-          height="8%"
-        ></Container>
-        <Container
-          style={{
-            height: '90%',
-            backgroundColor: '#FFFFFF82',
-            backdropFilter: 'blur(39.75px)',
-            borderRadius: '0 0 1rem 1rem',
-          }}
+          position="absolute"
+          left="-10%"
+          bottom="-24%"
+          transform="rotate(180deg)"
+          index="10"
         >
+          <Circle color="#FB980F54" width="65rem" height="65rem" />
+        </Container>
+
+        <Container
+          width="50%"
+          height="65%"
+          flex="column"
+          index="35"
+          radius=".5rem"
+          position="relative"
+        >
+          <SpeechBubble>{t('page.contact.bubble')}</SpeechBubble>
           <Container
-            flexDirection="column"
-            width="50%"
-            align="center"
-            justify="center"
-            padding="2rem 1rem"
+            width="100%"
+            bg="#EF7D13"
+            radius="1rem 1rem 0 0"
+            height="8%"
+          ></Container>
+          <Container
+            style={{
+              height: '90%',
+              backgroundColor: '#FFFFFF82',
+              backdropFilter: 'blur(39.75px)',
+              borderRadius: '0 0 1rem 1rem',
+            }}
           >
-            <Form
-              onSubmit={handleSubmit}
-              width="100%"
-              height="100%"
-              display="flex"
-              flex="column"
-              justify="space-around"
+            <Container
+              flexDirection="column"
+              width="50%"
               align="center"
-              gap=".5rem"
-              padding="0 1rem"
+              justify="center"
+              padding="2rem 1rem"
             >
-              {fields.map((field) => (
-                <Container
-                  key={field.name}
-                  flex="column"
-                  align="flex-start"
-                  gap=".5rem"
-                  width="90%"
-                >
-                  {field.type === 'textarea' ? (
-                    <textarea
-                      name={field.name}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      value={values[field.name]}
-                      placeholder={field.label}
-                      style={{
-                        ...inputStyles,
-                        height: '5rem',
-                        background: '#FFFFFF82',
-                        resize: 'none',
-                        color: '#2C16478A',
-                        fontFamily: 'Josefin Sans',
-                        fontSize: '1.1rem',
-                      }}
-                    />
-                  ) : (
-                    <Input
-                      type={field.type}
-                      name={field.name}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      value={values[field.name]}
-                      placeholder={field.label}
-                      style={{
-                        borderRadius: '1rem',
-                        fontSize: '1.1rem',
-                      }}
-                      {...inputStyles}
-                    />
-                  )}
-                  {touched[field.name] && errors[field.name] ? (
-                    <Text color="red" size=".8rem" padding="0 .5rem">
-                      {errors[field.name]}
-                    </Text>
-                  ) : null}
-                </Container>
-              ))}
-              <Button
-                type="submit"
-                bg="#EF7D13"
-                width="90%"
-                weight="700"
-                radius="2rem"
-                color="white"
-                disabled={buttonLabel !== 'Enviar'}
-                hover={{
-                  background: '#2F4A71',
-                  color: 'white',
-                  boxShadow: '0 4px 4px 0 #00000040',
-                }}
+              <Form
+                onSubmit={handleSubmit}
+                width="100%"
+                height="100%"
+                display="flex"
+                flex="column"
+                justify="space-around"
+                align="center"
+                gap=".5rem"
+                padding="0 1rem"
               >
-                {buttonLabel}
-              </Button>
-            </Form>
+                {fields.map((field) => (
+                  <Container
+                    key={field.name}
+                    flex="column"
+                    align="flex-start"
+                    gap=".5rem"
+                    width="90%"
+                  >
+                    {field.type === 'textarea' ? (
+                      <textarea
+                        name={field.name}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        value={values[field.name]}
+                        placeholder={field.label}
+                        style={{
+                          ...inputStyles,
+                          height: '5rem',
+                          background: '#FFFFFF82',
+                          resize: 'none',
+                          color: '#2C16478A',
+                          fontFamily: 'Josefin Sans',
+                          fontSize: '1.1rem',
+                        }}
+                      />
+                    ) : (
+                      <Input
+                        type={field.type}
+                        name={field.name}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        value={values[field.name]}
+                        placeholder={field.label}
+                        style={{
+                          borderRadius: '1rem',
+                          fontSize: '1.1rem',
+                        }}
+                        {...inputStyles}
+                      />
+                    )}
+                    {touched[field.name] && errors[field.name] ? (
+                      <Text color="red" size=".8rem" padding="0 .5rem">
+                        {errors[field.name]}
+                      </Text>
+                    ) : null}
+                  </Container>
+                ))}
+                <Button
+                  type="submit"
+                  bg="#EF7D13"
+                  width="90%"
+                  weight="700"
+                  radius="2rem"
+                  color="white"
+                  disabled={buttonLabel !== 'Enviar'}
+                  hover={{
+                    background: '#2F4A71',
+                    color: 'white',
+                    boxShadow: '0 4px 4px 0 #00000040',
+                  }}
+                >
+                  {buttonLabel}
+                </Button>
+              </Form>
+            </Container>
           </Container>
         </Container>
       </Container>
-    </Container>
+      <Container
+        height="100vh"
+        align="center"
+        justify="center"
+        flex="column"
+        id="Footer"
+        position="relative"
+        overflow="hidden"
+        bg="white"
+        style={{
+          backgroundImage: `url(/images/bg.svg)`,
+          backgroundSize: 'cover',
+          backgroundPositionY: '-30%',
+          backgroundRepeat: 'no-repeat',
+        }}
+      >
+        <Container
+          flex="column"
+          justify="center"
+          height="75%"
+          width="50%"
+          align="center"
+          gap="2rem"
+        >
+          <Vector width="200" />
+          <Container
+            flex="column"
+            justify="center"
+            align="center"
+            gap="2rem"
+            index="2"
+          >
+            <Text
+              weight="700"
+              size="2rem"
+              color="#FFFFFF78"
+              textShadow="0px 4px 6.4px #93939340"
+            >
+              Priscila Sarmiento
+            </Text>
+            <Container align="center" gap="4rem">
+              {labels.map((item, idx) => {
+                let link =
+                  item === t('page.contact.title') ? '/contacto' : `/#${item}`
+
+                return (
+                  <a
+                    href={link}
+                    key={idx}
+                    style={{ textDecoration: 'none' }}
+                    className="text-hover"
+                  >
+                    <Text key={idx} color="#FFFFFF" weight="500">
+                      {item}
+                    </Text>
+                  </a>
+                )
+              })}
+            </Container>
+            <Container className="wrapper">
+              <a href="#" className="icon">
+                <i className="fa-brands fa-instagram"></i>
+              </a>
+              <a href="#" className="icon">
+                <i className="fa-brands fa-x-twitter"></i>
+              </a>
+              <a href="#" className="icon">
+                <i className="fa-brands fa-whatsapp"></i>
+              </a>
+              <a href="#" className="icon">
+                <i className="fa-brands fa-linkedin-in"></i>
+              </a>
+            </Container>
+          </Container>
+        </Container>
+      </Container>
+    </>
   )
 }

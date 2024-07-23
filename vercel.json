@@ -2,12 +2,12 @@
   "version": 2,
   "builds": [
     {
-      "src": "package.json",
-      "use": "@vercel/static-build"
+      "src": "Dockerfile",
+      "use": "@vercel/docker"
     }
   ],
   "routes": [
     { "handle": "filesystem" },
-    { "src": "/.*", "dest": "/index.html" }
+    { "src": "/.*", "dest": "/" }
   ]
 }
