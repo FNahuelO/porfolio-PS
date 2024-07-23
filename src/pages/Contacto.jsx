@@ -129,7 +129,7 @@ export default function Contacto() {
         <Container
           position="absolute"
           left="-10%"
-          bottom="-24%"
+          bottom="-20%"
           transform="rotate(180deg)"
           index="10"
         >
