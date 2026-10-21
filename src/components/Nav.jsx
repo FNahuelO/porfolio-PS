@@ -1,93 +1,71 @@
-import { Container } from '../../style/Container'
-import { Text } from '../../style/Text'
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from "react-i18next";
+import Switch from "./Switch";
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
-import Switch from './Switch'
-import { useEffect, useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+const labelClass = "font-semibold text-gray text-xl max-lg:text-lg";
+const shadowLabelClass = `${labelClass} [text-shadow:rgba(0,0,0,0.25)_0px_4px_4px]`;
 
 export default function Nav() {
-  const { t, i18n } = useTranslation()
-  const location = useLocation()
-  const [isContactPage, setIsContactPage] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
+  const { t } = useTranslation();
+  const location = useLocation();
+  const [isContactPage, setIsContactPage] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 500) {
-        setScrolled(true)
+        setScrolled(true);
       } else {
-        setScrolled(false)
+        setScrolled(false);
       }
-    }
+    };
 
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
-    if (location.pathname === '/contacto') {
-      setIsContactPage(true)
+    if (location.pathname === "/contacto") {
+      setIsContactPage(true);
     } else {
-      setIsContactPage(false)
+      setIsContactPage(false);
     }
-  }, [location.pathname])
+  }, [location.pathname]);
 
   const labels = [
-    t('page.home.title'),
-    t('page.us.title'),
-    t('page.services.title'),
-  ]
-  const labels2 = [t('page.prices.title'), t('page.contact.title')]
-
-  const cambiarIdioma = (idioma) => {
-    i18n.changeLanguage(idioma)
-  }
+    t("page.home.title"),
+    t("page.us.title"),
+    t("page.services.title"),
+  ];
+  const labels2 = [t("page.prices.title"), t("page.contact.title")];
 
   return (
-    <Container
-      bg={scrolled ? '#ffffff' : 'none'}
-      height="5vh"
-      padding="3.5rem 0 1rem 0"
-      justify="center"
-      align="center"
-      position="fixed"
-      index="40"
-      width="100%"
-      gap="2rem"
-      top="0"
+    <div
+      className={`h-[5vh] pt-14 pb-4 flex justify-center items-center fixed z-[40] w-full top-0 max-lg:justify-between max-lg:gap-8 max-lg:px-12 ${
+        scrolled ? "bg-white" : "bg-none"
+      }`}
     >
-      <Container width="55%" align="center" gap="4rem">
+      <div className="w-[55%] flex items-center gap-16 max-lg:w-auto max-lg:gap-8">
         {labels.map((item, idx) => (
           <a
             href={isContactPage ? `/#${item}` : `#${item}`}
             key={idx}
-            style={{ textDecoration: 'none' }}
             className="text-hover"
           >
-            <Text key={idx} color="#4A4A4A" weight="500" size="1.25rem">
-              {item}
-            </Text>
+            <span className={labelClass}>{item}</span>
           </a>
         ))}
-      </Container>
-      <Container width="15%" align="center" justify="space-evenly">
+      </div>
+      <div className="w-[15%] flex items-center justify-evenly max-lg:w-auto max-lg:gap-8">
         <a
           href={isContactPage ? `/#${labels2[0]}` : `#${labels2[0]}`}
-          style={{ textDecoration: 'none' }}
           className="text-hover"
         >
-          <Text
-            color={'#4A4A4A'}
-            weight="500"
-            size="1.25rem"
-            textShadow="0px 4px 4px #00000040"
-          >
-            {labels2[0]}
-          </Text>
+          <span className={shadowLabelClass}>{labels2[0]}</span>
         </a>
         <Link
           to={
@@ -97,34 +75,15 @@ export default function Nav() {
           }
           className="text-hover"
         >
-          <Text
-            color={'#4A4A4A'}
-            weight="500"
-            size="1.25rem"
-            textShadow="0px 4px 4px #00000040"
-          >
-            {labels2[1]}
-          </Text>
+          <span className={shadowLabelClass}>{labels2[1]}</span>
         </Link>
-      </Container>
+      </div>
 
-      <Container gap="1.5rem" align="center">
-        <Text
-          color={'#4A4A4A'}
-          size="1.25rem"
-          textShadow="0px 4px 4px #00000040"
-        >
-          ES
-        </Text>
-        <Switch color={'#4A4A4A'} />
-        <Text
-          color={'#4A4A4A'}
-          size="1.25rem"
-          textShadow="0px 4px 4px #00000040"
-        >
-          EN
-        </Text>
-      </Container>
-    </Container>
-  )
+      <div className="gap-6 flex items-center max-lg:gap-4">
+        <span className={shadowLabelClass}>ES</span>
+        <Switch color={"#4A4A4A"} />
+        <span className={shadowLabelClass}>EN</span>
+      </div>
+    </div>
+  );
 }

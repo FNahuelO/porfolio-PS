@@ -1,115 +1,84 @@
-import { Container } from '../../style/Container'
-import { Text } from '../../style/Text'
-import Vector from '../assets/VectorP'
-import Instagram from '../assets/Instagram'
-import Facebook from '../assets/Facebook'
-import Twitter from '../assets/Twitter'
-import Whatsapp from '../assets/Whatsapp'
-import Circle from '../assets/Circle'
-import { useTranslation } from 'react-i18next'
-import { useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom'
-import './buttons/style.css'
+import Vector from "../assets/VectorP";
+import Instagram from "../assets/Instagram";
+import Facebook from "../assets/Facebook";
+import Twitter from "../assets/Twitter";
+import Whatsapp from "../assets/Whatsapp";
+import Circle from "../assets/Circle";
+import { useTranslation } from "react-i18next";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import "./buttons/style.css";
 
 export default function Contacto() {
-  const { t } = useTranslation()
-  const location = useLocation()
-  const [isContactPage, setIsContactPage] = useState(false)
+  const { t } = useTranslation();
+  const location = useLocation();
+  const [isContactPage, setIsContactPage] = useState(false);
 
   const labels = [
-    t('page.home.title'),
-    t('page.us.title'),
-    t('page.services.title'),
-    t('page.prices.title'),
-    t('page.contact.title'),
-  ]
+    t("page.home.title"),
+    t("page.us.title"),
+    t("page.services.title"),
+    t("page.prices.title"),
+    t("page.contact.title"),
+  ];
 
   const vectores = [
     <Facebook width="40%" height="40%" />,
     <Instagram width="40%" height="40%" />,
     <Whatsapp width="40%" height="40%" />,
     <Twitter width="40%" height="40%" />,
-  ]
+  ];
 
   useEffect(() => {
-    if (location.pathname === '/contacto') {
-      setIsContactPage(true)
+    if (location.pathname === "/contacto") {
+      setIsContactPage(true);
     } else {
-      setIsContactPage(false)
+      setIsContactPage(false);
     }
-  }, [location.pathname])
+  }, [location.pathname]);
 
   return (
-    <Container
-      height="100vh"
-      align="center"
-      justify="center"
-      flex="column"
+    <div
+      className="h-screen items-center flex flex-col justify-center relative overflow-hidden bg-white"
       id="Footer"
-      position="relative"
-      overflow="hidden"
-      bg="white"
       style={{
         backgroundImage: `url(/images/bg.svg)`,
-        backgroundSize: 'cover',
-        backgroundPositionY: '-30%',
-        backgroundRepeat: 'no-repeat',
+        backgroundSize: "cover",
+        backgroundPositionY: "-30%",
+        backgroundRepeat: "no-repeat",
       }}
     >
       {isContactPage && (
-        <Container
-          position="absolute"
-          left="-1%"
-          top="-38%"
-          transform="rotate(270deg)"
-        >
+        <div className="absolute -left-4 top-[-38%] rotate-[270deg]">
           <Circle color="#FB980F54" width="45rem" height="45rem" />
-        </Container>
+        </div>
       )}
-      <Container
-        flex="column"
-        justify="center"
-        height="75%"
-        width="50%"
-        align="center"
-        gap="2rem"
-      >
-        <Vector width="200" />
-        <Container
-          flex="column"
-          justify="center"
-          align="center"
-          gap="2rem"
-          index="2"
-        >
-          <Text
-            weight="700"
-            size="2rem"
-            color="#FFFFFF78"
-            textShadow="0px 4px 6.4px #93939340"
-          >
+      <div className="flex flex-col justify-center h-[75%] w-1/2 items-center gap-8 max-lg:w-[85%]">
+        <Vector width="20rem" height="25.6rem" />
+        <div className="flex flex-col items-center justify-center gap-8 z-[2]">
+          <span className="font-bold text-4xl text-[#FFFFFF78] [text-shadow:0px_4px_6.4px_#93939340]">
             Priscila Sarmiento
-          </Text>
-          <Container align="center" gap="4rem">
+          </span>
+          <div className="flex items-center gap-16 max-lg:gap-10 max-md:gap-6 max-md:flex-wrap max-md:justify-center">
             {labels.map((item, idx) => {
               let link =
-                item === t('page.contact.title') ? '/contacto' : `/#${item}`
+                item === t("page.contact.title") ? "/contacto" : `/#${item}`;
 
               return (
                 <a
                   href={link}
                   key={idx}
-                  style={{ textDecoration: 'none' }}
+                  style={{ textDecoration: "none" }}
                   className="text-hover"
                 >
-                  <Text key={idx} color="#FFFFFF" weight="500">
+                  <span key={idx} className="text-white font-semibold">
                     {item}
-                  </Text>
+                  </span>
                 </a>
-              )
+              );
             })}
-          </Container>
-          <Container className="wrapper">
+          </div>
+          <div className="wrapper">
             <a href="#" className="icon">
               <i className="fa-brands fa-instagram"></i>
             </a>
@@ -122,9 +91,9 @@ export default function Contacto() {
             <a href="#" className="icon">
               <i className="fa-brands fa-linkedin-in"></i>
             </a>
-          </Container>
-        </Container>
-      </Container>
-    </Container>
-  )
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }

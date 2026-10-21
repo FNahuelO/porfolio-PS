@@ -1,0 +1,33 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Contacto from './pages/Contacto'
+import Home from './pages/Home'
+import Footer from './components/Footer'
+import './index.css'
+
+
+function App() {
+  return (
+    <>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossOrigin="true"
+      />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet"
+      />
+      <Router>
+        <div className="flex flex-col">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/contacto" element={<Contacto />} />
+          </Routes>
+        </div>
+      </Router>
+    </>
+  )
+}
+
+export default App

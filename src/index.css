@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   font-family: 'Josefin Sans';
   font-size: 10px;
@@ -12,6 +16,12 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@media (min-width: 1440px) {
+  :root {
+    font-size: clamp(10px, 0.6944vw, 18px);
+  }
 }
 
 #root {
@@ -50,6 +60,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: white;
 }
 
 h1 {

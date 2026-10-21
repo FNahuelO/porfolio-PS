@@ -1,86 +1,43 @@
-import React, { useEffect, useState } from 'react'
-import Circle from '../assets/Circle'
-import * as Yup from 'yup'
-import { Input } from '../../style/Input'
-import { Button } from '../../style/Buttons'
-import { Form } from '../../style/Forms'
-import { Container } from '../../style/Container'
-import { useFormik } from 'formik'
-import { Text } from '../../style/Text'
-import Vector from '../assets/VectorP'
-import styled from 'styled-components'
-import Nav from '../components/Nav'
-import { useTranslation } from 'react-i18next'
+import React, { useEffect, useState } from "react";
+import Circle from "../assets/Circle";
+import * as Yup from "yup";
+import { useFormik } from "formik";
+import Vector from "../assets/VectorP";
+import Nav from "../components/Nav";
+import { useTranslation } from "react-i18next";
+import { ClipLoader } from "react-spinners";
 
 const fields = [
-  { name: 'nombre', label: 'Nombre', type: 'text' },
-  { name: 'apellido', label: 'Apellido', type: 'text' },
-  { name: 'correo', label: 'Correo Electrónico', type: 'text' },
-  { name: 'mensaje', label: 'Mensaje', type: 'textarea' },
-]
+  { name: "nombre", label: "Nombre", type: "text" },
+  { name: "apellido", label: "Apellido", type: "text" },
+  { name: "correo", label: "Correo Electrónico", type: "text" },
+  { name: "mensaje", label: "Mensaje", type: "textarea" },
+];
 
-const inputStyles = {
-  bg: '#FFFFFF82',
-  width: '90%',
-  outline: 'none',
-  color: '#2C16478A',
-  padding: '1rem',
-  fontSize: 'smaller',
-  border: '.5px solid #0000000f',
-  borderRadius: '1rem',
-}
-
-const SpeechBubble = styled.div`
-  position: absolute;
-  top: 7rem;
-  right: 1rem;
-  transform: translateX(70%);
-  background: #f9b233;
-  border-radius: 2rem;
-  padding: 3rem 2rem;
-  color: white;
-  font-size: 1.1rem;
-  text-align: start;
-  line-height: 1.4;
-  width: 20rem;
-  box-shadow: 14px 9px 7.7px 0px #68009940;
-  z-index: 99;
-
-  &:after {
-    content: '';
-    position: absolute;
-    bottom: -22px;
-    transform: rotate(14deg);
-    left: 65px;
-    width: 0;
-    height: 0;
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-top: 30px solid #f9b233;
-  }
-`
+const inputClass =
+  "w-[90%] p-4 bg-[#FFFFFF82] text-[#2C16478A] text-[1.1rem] font-['Josefin_Sans'] border-[0.5px] border-solid border-[#0000000f] rounded-2xl outline-none";
 
 export default function Contacto() {
   const {
     t,
     i18n: { language },
-  } = useTranslation()
+  } = useTranslation();
 
-  const [buttonLabel, setButtonLabel] = useState('Enviar')
+  const [buttonLabel, setButtonLabel] = useState("Enviar");
 
   useEffect(() => {
-    if (language === 'en') {
-      setButtonLabel('Send')
+    if (language === "en") {
+      setButtonLabel("Send");
     }
-  }, [language])
+  }, [language]);
 
   const labels = [
-    t('page.home.title'),
-    t('page.us.title'),
-    t('page.services.title'),
-    t('page.prices.title'),
-    t('page.contact.title'),
-  ]
+    t("page.home.title"),
+    t("page.us.title"),
+    t("page.services.title"),
+    t("page.prices.title"),
+    t("page.contact.title"),
+  ];
 
   const {
     handleSubmit,
@@ -92,219 +49,127 @@ export default function Contacto() {
     errors,
   } = useFormik({
     initialValues: {
-      nombre: '',
-      apellido: '',
-      correo: '',
-      mensaje: '',
+      nombre: "",
+      apellido: "",
+      correo: "",
+      mensaje: "",
     },
     validationSchema: Yup.object({
-      nombre: Yup.string().required('Este campo es obligatorio'),
-      apellido: Yup.string().required('Este campo es obligatorio'),
+      nombre: Yup.string().required("Este campo es obligatorio"),
+      apellido: Yup.string().required("Este campo es obligatorio"),
       correo: Yup.string()
-        .email('Formato de correo inválido')
-        .required('Este campo es obligatorio'),
-      mensaje: Yup.string().required('Este campo es obligatorio'),
+        .email("Formato de correo inválido")
+        .required("Este campo es obligatorio"),
+      mensaje: Yup.string().required("Este campo es obligatorio"),
     }),
     onSubmit: async (values) => {
-      setButtonLabel(<ClipLoader size={20} color="white" />)
-      console.log(values)
+      setButtonLabel(<ClipLoader size={20} color="white" />);
+      console.log(values);
     },
-  })
+  });
   return (
     <>
-      <Container
-        height="100vh"
-        flex="column"
-        align="center"
-        justify="center"
-        bg="#FFFFFF"
-        width="100%"
-        position="relative"
-      >
+      <div className="h-screen flex flex-col items-center justify-center bg-white w-full relative max-lg:h-auto max-lg:min-h-screen max-lg:py-36">
         <Nav />
 
-        <Container position="absolute" right="0" top="0">
+        <div className="flex absolute right-0 top-0">
           <Circle width="40rem" height="40rem" />
-        </Container>
-        <Container
-          position="absolute"
-          left="-10%"
-          bottom="-20%"
-          transform="rotate(180deg)"
-          index="10"
-        >
+        </div>
+        <div className="flex absolute left-[-10%] bottom-[-20%] rotate-180 z-10">
           <Circle color="#FB980F54" width="65rem" height="65rem" />
-        </Container>
+        </div>
 
-        <Container
-          width="50%"
-          height="65%"
-          flex="column"
-          index="35"
-          radius=".5rem"
-          position="relative"
-        >
-          <SpeechBubble>{t('page.contact.bubble')}</SpeechBubble>
-          <Container
-            width="100%"
-            bg="#EF7D13"
-            radius="1rem 1rem 0 0"
-            height="8%"
-          ></Container>
-          <Container
-            style={{
-              height: '90%',
-              backgroundColor: '#FFFFFF82',
-              backdropFilter: 'blur(39.75px)',
-              borderRadius: '0 0 1rem 1rem',
-            }}
-          >
-            <Container
-              flexDirection="column"
-              width="50%"
-              align="center"
-              justify="center"
-              padding="2rem 1rem"
-            >
-              <Form
+        <div className="w-1/2 h-[65%] flex flex-col z-[35] rounded-lg relative max-lg:w-[80%] max-lg:h-auto max-md:w-[90%]">
+          <div className="absolute top-[7rem] right-[1rem] translate-x-[70%] w-[20rem] py-12 px-8 bg-[#f9b233] rounded-[2rem] text-white text-[1.1rem] text-start leading-[1.4] shadow-[14px_9px_7.7px_0px_#68009940] z-[99] after:absolute after:content-[''] after:bottom-[-2.2rem] after:left-[6.5rem] after:rotate-[14deg] after:w-0 after:h-0 after:border-x-[1.5rem] after:border-x-transparent after:border-t-[3rem] after:border-t-[#f9b233] max-lg:relative max-lg:top-auto max-lg:right-auto max-lg:translate-x-0 max-lg:self-end max-lg:mb-12 max-lg:py-8">
+            {t("page.contact.bubble")}
+          </div>
+          <div className="w-full bg-[#EF7D13] rounded-t-2xl h-[8%] max-lg:h-[4rem]"></div>
+          <div className="h-[90%] bg-[#FFFFFF82] backdrop-blur-[39.75px] rounded-b-2xl max-lg:h-auto">
+            <div className="flex flex-col w-1/2 items-center justify-center px-4 py-8 max-md:w-full">
+              <form
+                className="w-full h-full flex flex-col justify-around items-center gap-2 px-4"
                 onSubmit={handleSubmit}
-                width="100%"
-                height="100%"
-                display="flex"
-                flex="column"
-                justify="space-around"
-                align="center"
-                gap=".5rem"
-                padding="0 1rem"
               >
                 {fields.map((field) => (
-                  <Container
+                  <div
+                    className="flex flex-col items-start gap-2 w-[90%]"
                     key={field.name}
-                    flex="column"
-                    align="flex-start"
-                    gap=".5rem"
-                    width="90%"
                   >
-                    {field.type === 'textarea' ? (
+                    {field.type === "textarea" ? (
                       <textarea
                         name={field.name}
                         onChange={handleChange}
                         onBlur={handleBlur}
                         value={values[field.name]}
                         placeholder={field.label}
-                        style={{
-                          ...inputStyles,
-                          height: '5rem',
-                          background: '#FFFFFF82',
-                          resize: 'none',
-                          color: '#2C16478A',
-                          fontFamily: 'Josefin Sans',
-                          fontSize: '1.1rem',
-                        }}
+                        className={`${inputClass} h-[5rem] resize-none`}
                       />
                     ) : (
-                      <Input
+                      <input
                         type={field.type}
                         name={field.name}
                         onChange={handleChange}
                         onBlur={handleBlur}
                         value={values[field.name]}
                         placeholder={field.label}
-                        style={{
-                          borderRadius: '1rem',
-                          fontSize: '1.1rem',
-                        }}
-                        {...inputStyles}
+                        className={inputClass}
                       />
                     )}
                     {touched[field.name] && errors[field.name] ? (
-                      <Text color="red" size=".8rem" padding="0 .5rem">
+                      <span className="text-[red] text-[.8rem] px-2">
                         {errors[field.name]}
-                      </Text>
+                      </span>
                     ) : null}
-                  </Container>
+                  </div>
                 ))}
-                <Button
+                <button
                   type="submit"
-                  bg="#EF7D13"
-                  width="90%"
-                  weight="700"
-                  radius="2rem"
-                  color="white"
-                  disabled={buttonLabel !== 'Enviar'}
-                  hover={{
-                    background: '#2F4A71',
-                    color: 'white',
-                    boxShadow: '0 4px 4px 0 #00000040',
-                  }}
+                  className="w-[90%] bg-[#EF7D13] text-white text-[1rem] font-bold rounded-[2rem] focus:outline-none hover:bg-[#2F4A71] hover:text-white hover:shadow-[0_4px_4px_0_#00000040]"
+                  disabled={buttonLabel !== "Enviar"}
                 >
                   {buttonLabel}
-                </Button>
-              </Form>
-            </Container>
-          </Container>
-        </Container>
-      </Container>
-      <Container
-        height="100vh"
-        align="center"
-        justify="center"
-        flex="column"
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="h-screen items-center justify-center flex flex-col relative overflow-hidden bg-white"
         id="Footer"
-        position="relative"
-        overflow="hidden"
-        bg="white"
         style={{
           backgroundImage: `url(/images/bg.svg)`,
-          backgroundSize: 'cover',
-          backgroundPositionY: '-30%',
-          backgroundRepeat: 'no-repeat',
+          backgroundSize: "cover",
+          backgroundPositionY: "-30%",
+          backgroundRepeat: "no-repeat",
         }}
       >
-        <Container
-          flex="column"
-          justify="center"
-          height="75%"
-          width="50%"
-          align="center"
-          gap="2rem"
-        >
-          <Vector width="200" />
-          <Container
-            flex="column"
-            justify="center"
-            align="center"
-            gap="2rem"
-            index="2"
-          >
-            <Text
-              weight="700"
-              size="2rem"
-              color="#FFFFFF78"
-              textShadow="0px 4px 6.4px #93939340"
-            >
+        <div className="flex flex-col justify-center h-[75%] w-1/2 items-center gap-8 max-lg:w-[85%]">
+          <Vector width="20rem" height="25.6rem" />
+          <div className="flex flex-col justify-center items-center gap-8 z-[2]">
+            <span className="font-bold text-[2rem] text-[#FFFFFF78] shadow-md shadow-[#93939340]">
               Priscila Sarmiento
-            </Text>
-            <Container align="center" gap="4rem">
+            </span>
+            <div className="flex items-center gap-16 max-lg:gap-10 max-md:gap-6 max-md:flex-wrap max-md:justify-center">
               {labels.map((item, idx) => {
                 let link =
-                  item === t('page.contact.title') ? '/contacto' : `/#${item}`
+                  item === t("page.contact.title") ? "/contacto" : `/#${item}`;
 
                 return (
                   <a
                     href={link}
                     key={idx}
-                    style={{ textDecoration: 'none' }}
+                    style={{ textDecoration: "none" }}
                     className="text-hover"
                   >
-                    <Text key={idx} color="#FFFFFF" weight="500">
+                    <span key={idx} className="text-white font-semibold">
                       {item}
-                    </Text>
+                    </span>
                   </a>
-                )
+                );
               })}
-            </Container>
-            <Container className="wrapper">
+            </div>
+            <div className="wrapper">
               <a href="#" className="icon">
                 <i className="fa-brands fa-instagram"></i>
               </a>
@@ -317,10 +182,10 @@ export default function Contacto() {
               <a href="#" className="icon">
                 <i className="fa-brands fa-linkedin-in"></i>
               </a>
-            </Container>
-          </Container>
-        </Container>
-      </Container>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
-  )
+  );
 }

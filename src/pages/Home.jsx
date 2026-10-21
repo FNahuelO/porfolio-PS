@@ -2,7 +2,6 @@ import AboutMe from './AboutMe'
 import Skills from './Skills'
 import Proyectos from './Proyectos'
 import HomeComponent from '../components/Home'
-import { Container } from '../../style/Container'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import { useEffect } from 'react'
@@ -23,14 +22,14 @@ function Home() {
 
   return (
     <>
-      <Container flex="column" bg="white">
+      <div className='flex flex-col bg-white'>
         <Nav />
         <HomeComponent />
         <AboutMe />
         <Skills />
         <Proyectos />
         <Footer />
-      </Container>
+      </div>
     </>
   )
 }

@@ -1,65 +1,30 @@
-import { Container } from '../../style/Container'
-import { Text } from '../../style/Text'
-import Vector from '../assets/Circles'
-import { useTranslation } from 'react-i18next'
+import Vector from "../assets/Circles";
+import { useTranslation } from "react-i18next";
 
 export default function Nosotros() {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
 
   return (
-    <Container
-      bg="transparent"
-      flex="column"
-      height="100vh"
-      align="center"
-      justify="center"
-      radius="0 0 15% 15%"
+    <div
+      className="bg-transparent flex flex-col h-screen items-center justify-center max-lg:h-auto max-lg:min-h-screen max-lg:py-32"
       id="Sobre Mi"
     >
-      <Container position="absolute" width="80%">
-        <Vector width="100rem" height="45rem" />
-      </Container>
-      <Container
-        width="40%"
-        flex="column"
-        height="30%"
-        gap="1rem"
-        bg="#FFFFFF7A"
-        padding="4rem"
-        radius="1rem"
-        transform="translate(0,5%)"
-        style={{
-          backdropFilter: 'blur(39.75px)',
-        }}
-      >
-        <Text
-          size="2.5rem"
-          weight="700"
-          align="start"
-          color="#FFFFFF90"
-          textShadow="-3px 3px 7.6px #F37008"
-        >
-          {t('page.us.title')}
-        </Text>
-        <Container flex="column" gap="1rem" align="start">
-          <Text
-            size="1.25rem"
-            color="#7F7676"
-            align="justify"
-            textShadow="0px 4px 4px  #00000040"
-          >
-            {t('page.us.name')}
-          </Text>
-          <Text
-            size="1.25rem"
-            color="#7F7676"
-            align="justify"
-            textShadow="0px 4px 4px  #00000040"
-          >
-            {t('page.us.text')}
-          </Text>
-        </Container>
-      </Container>
-    </Container>
-  )
+      <div className="absolute w-4/5 max-lg:w-[95%]">
+        <Vector width="100rem" height="45rem" className="max-w-full" />
+      </div>
+      <div className="w-2/5 flex flex-col gap-4 bg-[#FFFFFF7A] p-16 rounded-2xl backdrop-blur-[39.75px] translate-y-[5%] max-xl:w-1/2 max-lg:w-[70%] max-lg:p-12 max-md:w-[85%]">
+        <span className="text-4xl font-bold text-start text-[#FFFFFF90] [text-shadow:-3px_3px_7.6px_#F37008]">
+          {t("page.us.title")}
+        </span>
+        <div className="flex flex-col gap-4 items-start">
+          <span className="text-xl text-[#7F7676] text-justify [text-shadow:rgba(0,0,0,0.25)_0px_4px_4px] max-lg:text-lg">
+            {t("page.us.name")}
+          </span>
+          <span className="text-xl text-[#7F7676] text-justify [text-shadow:rgba(0,0,0,0.25)_0px_4px_4px] max-lg:text-lg">
+            {t("page.us.text")}
+          </span>
+        </div>
+      </div>
+    </div>
+  );
 }
